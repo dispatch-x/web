@@ -1,0 +1,21 @@
+openapi: 3.0.0
+servers:
+  - url: //api.dispatch.eu.org/v1
+  description: Server
+info:
+  description: |
+    This is the Dispatch API. bla bla bla
+  version: 1.0.0
+  title: Dispatch X API
+  termsOfService: 'https://dispatch.eu.org/terms/'
+  contact:
+    name: API Support
+    email: support@dispatch.eu.org
+    url: https://github.com/GoneRogueProductions/dispatch-X
+  x-logo:
+    url: 'https://dispatch.eu.org/assets/img/icons/logo.png'
+    altText: Dispatch logo
+  license:
+    name: MIT
+    url: 'https://opensource.org/license/mit/'
+    
