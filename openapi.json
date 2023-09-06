@@ -12,7 +12,7 @@
         "url": "http://dispatch.eu.org/api"
       },
       {
-        "url": "http://dispatch.eu.orh/api/error_codes",
+        "url": "http://dispatch.eu.org/api/error_codes",
         "description": "A list and explanation of error codes for this API"
       }
     ],
