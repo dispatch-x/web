@@ -66,7 +66,7 @@ response:
 ```json
 {
     "code": "401",
-    "message:": "user needs to be logged in to perform this action.",
+    "message:": "user needs to be logged in to perform this action",
     "reason": "user is not authorized to post on this chatroom"
 }
 ```
