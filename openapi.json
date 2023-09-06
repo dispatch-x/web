@@ -1,0 +1,499 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "version": "1.0.0",
+      "title": "DispatchX API",
+      "license": {
+        "name": "MIT"
+      }
+    },
+    "servers": [
+      {
+        "url": "http://dispatch.eu.org/api"
+      },
+      {
+        "url": "http://dispatch.eu.orh/api/error_codes",
+        "description": "A list and explanation of error codes for this API"
+      }
+    ],
+    "paths": {
+      "/post": {
+        "get": {
+          "summary": "Posts message to chatroom",
+          "operationId": "postMessage",
+          "parameters": [
+            {
+              "name": "chatroom",
+              "in": "query",
+              "description": "The chatroom id on which to post.",
+              "required": true,
+              "schema": {
+                "type": "integer",
+                "maximum": 4096,
+                "format": "int64"
+              }
+            },
+            {
+                "name": "text",
+                "in": "query",
+                "description": "The content of the message",
+                "required": true,
+                "schema": {
+                  "type": "string"
+                }
+              }
+          ],
+          "responses": {
+            "200": {
+              "description": "The UUID of the message.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/uuid"
+                  }
+                }
+              }
+            },
+            "default": {
+              "description": "Error posting message.",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "$ref": "#/components/schemas/error"
+                  }
+                }
+              }
+            }
+          }
+        }
+        },
+        "/del": {
+            "get": {
+              "summary": "Deletes message from chatroom",
+              "operationId": "deleteMessage",
+              "parameters": [
+                {
+                  "name": "chatroom",
+                  "in": "query",
+                  "description": "The chatroom id where the message is stored.",
+                  "required": true,
+                  "schema": {
+                    "type": "integer",
+                    "maximum": 4096,
+                    "format": "int64"
+                  }
+                },
+                {
+                    "name": "uuid",
+                    "in": "query",
+                    "description": "The uuid of the message",
+                    "required": true,
+                    "schema": {
+                      "type": "string"
+                    }
+                  }
+              ],
+              "responses": {
+                "200": {
+                  "description": "Positive result",
+                  "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 1,
+                            "format": "int64"
+                        }
+                    }
+                    }
+                },
+                "default": {
+                  "description": "Error deleting message.",
+                  "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/error"
+                        }
+                    }
+                  }
+                }
+              }
+            }
+        },
+        "/newroom": {
+            "get": {
+              "summary": "Creates new room",
+              "operationId": "createRoom",
+              "parameters": [
+                {
+                  "name": "alias",
+                  "in": "query",
+                  "description": "The chatroom's alias",
+                  "required": true,
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                {
+                    "name": "users",
+                    "in": "query",
+                    "description": "The users who will be allowed into the chatroom",
+                    "required": true,
+                    "schema": {
+                      "$ref":"#/components/schemas/users"
+                    }
+                  }
+              ],
+              "responses": {
+                "200": {
+                  "description": "The id of the chatroom.",
+                  "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "integer",
+                            "maximum": 65536,
+                            "format": "int64"
+                        }
+                    }
+                  }
+                },
+                "default": {
+                  "description": "Error creating chatroom.",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/error"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+        },
+        "/listroom": {
+            "get": {
+              "summary": "Lists the messages in the room",
+              "operationId": "listRoom",
+              "parameters": [
+                {
+                  "name": "chatroom",
+                  "in": "query",
+                  "description": "The chatroom's id",
+                  "required": true,
+                  "schema": {
+                    "type": "integer",
+                    "format": "int64"
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "The lists of posts.",
+                  "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/posts"
+                        }
+                    }
+                  }
+                },
+                "default": {
+                  "description": "Error listing posts.",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/error"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+        },
+        "/login": {
+            "get": {
+              "summary": "Logs in to a user account. Ensure you preserve the session (eg. requests.Session() in Python)",
+              "operationId": "login",
+              "parameters": [
+                {
+                  "name": "username",
+                  "in": "query",
+                  "description": "The username",
+                  "required": true,
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                {
+                    "name": "pass",
+                    "in": "query",
+                    "description": "The password",
+                    "required": true,
+                    "schema": {
+                      "type": "string"
+                    }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "Positive response",
+                  "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 1,
+                            "format": "int64"
+                        }
+                    }
+                  }
+                },
+                "default": {
+                  "description": "Error logging into account.",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/error"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+        },
+        "/logout": {
+            "get": {
+              "summary": "Logs out of the account, destroying the session.",
+              "operationId": "logout",
+              "parameters": [
+              ],
+              "responses": {
+                "200": {
+                  "description": "Positive response",
+                  "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 1,
+                            "format": "int64"
+                        }
+                    }
+                  }
+                },
+                "default": {
+                  "description": "Error logging out of account.",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/error"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+        },
+        "/listuser": {
+            "get": {
+              "summary": "Lists the messages user specified has posted",
+              "operationId": "listUser",
+              "parameters": [
+                {
+                  "name": "rooms",
+                  "in": "query",
+                  "description": "The list of chatrooms to comb, by id",
+                  "required": true,
+                  "schema": {
+                    "type":"array",
+                    "items": {
+                        "type": "integer",
+                        "format": "int64"
+                    }
+                  }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "The lists of posts.",
+                  "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/posts"
+                        }
+                    }
+                  }
+                },
+                "default": {
+                  "description": "Error listing posts.",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/error"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+        },
+        "/myrooms": {
+            "get": {
+              "summary": "Lists the rooms logged in user is part of",
+              "operationId": "myRooms",
+              "parameters": [
+              ],
+              "responses": {
+                "200": {
+                  "description": "The lists of rooms.",
+                  "content": {
+                    "application/json": {
+                        "schema": {
+                            "$ref": "#/components/schemas/rooms"
+                        }
+                    }
+                  }
+                },
+                "default": {
+                  "description": "Error listing posts.",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/error"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+        }        
+    },
+    "components": {
+      "schemas": {
+        "Pet": {
+          "type": "object",
+          "required": [
+            "id",
+            "name"
+          ],
+          "properties": {
+            "id": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "name": {
+              "type": "string"
+            },
+            "tag": {
+              "type": "string"
+            }
+          }
+        },
+        "uuid": {
+            "type": "object",
+            "required": [
+              "uuid"
+            ],
+            "properties": {
+              "uuid": {
+                "type": "string"
+              }
+            }
+        },
+        "room": {
+            "type": "object",
+            "required": [
+              "id",
+              "alias"
+            ],
+            "properties": {
+              "id": {
+                "type": "integer",
+                "format": "int64"
+              },
+              "alias": {
+                "type": "string"
+              }
+            }
+        },
+        "rooms": {
+            "type": "object",
+            "required": [
+              "rooms"
+            ],
+            "properties": {
+              "rooms": {
+                "type": "array",
+                "items": {
+                    "$ref":"#/components/schemas/room"
+                }
+              }
+            }
+        },
+        "users": {
+            "type": "object",
+            "required": [
+              "users"
+            ],
+            "properties": {
+              "users": {
+                "type": "array",
+                "items": {
+                    "type":"string"
+                }
+              }
+            }
+        },
+        "post": {
+            "type": "object",
+            "required": [
+              "poster",
+              "message",
+              "timestamp"
+            ],
+            "properties": {
+              "poster": {
+                "type":"string"
+              },
+              "message": {
+                "type":"string"
+              },
+              "timestamp": {
+                "type": "integer",
+                "format": "int64"
+              }
+            }
+        },
+        "posts": {
+            "type": "object",
+            "required": [
+              "posts"
+            ],
+            "properties": {
+              "posts": {
+                "type": "array",
+                "items": {
+                    "$ref":"#/components/schemas/post"
+                }
+              }
+            }
+        },
+        "error": {
+          "type": "object",
+          "required": [
+            "code",
+            "message"
+          ],
+          "properties": {
+            "code": {
+              "type": "integer",
+              "format": "int64"
+            },
+            "message": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    }
+  }
