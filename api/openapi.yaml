@@ -78,14 +78,19 @@ x-tagGroups:
       - maintenence
   - name: Other
     tags:
-      stats
+      - stats
 paths:
+  # TODO: add other things including a chatroom listing, login and user info
   /chats/send:
     post:
+      security: 
+        - dispatch_auth:
+          - 'write:dispatch'
+          - 'read:dispatch'
       tags:
         - chat
       summary: Send a message to a chatroom
-      description: Send a message to a chatroom.
+      description: 'Send a message to a chatroom ID.'
       operationId: sendMessage
       responses:
         '200':
@@ -109,8 +114,9 @@ paths:
               properties:
                 token:
                   type: string
+                  # Using OAuth2
                   description: 'The session token of your user. Log in using the login API first to get a session token.'
-                  example: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE0MTY5MjkxMDksImp0aSI6ImFhN2Y4ZDBhOTVjIiwic2NvcGVzIjpbInJlcG8iLCJwdWJsaWNfcmVwbyJdfQ.XCEwpBGvOLma4TCoh36FU7XhUbcskygS81HE1uHLf0E'
+                  example: 'd50d9fd00acf797ac409d5890fcc76669b727e63'
                 message:
                   type: string
                   description: 'The content of the message. Images and videos should be URLs.'
@@ -122,7 +128,16 @@ paths:
                   example: 101
                 # TODO: add more stuff
                 
-
-                  
-              
-
+components: 
+  securitySchemes: 
+    dispatch_auth:
+      description: |
+        Get access to data while protecting your account credentials.
+        OAuth2 is also a safer and more secure way to give you access.
+      type: oauth2
+      flows:
+        implicit:
+          authorizationUrl: 'http://dispatch.eu.org/api/oauth/dialog'
+          scopes:
+            'write:dispatch': modify user info in your account and send messages
+            'read:dispatch': read your messages, chat and others
