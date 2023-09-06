@@ -1,3 +1,6 @@
+# WORKING as of 06/09
+# test at https://redocly.github.io/redoc/?url=https://raw.githubusercontent.com/GoneRogueProductions/dispatch-X/main/api/openapi.yaml&nocors
+# after commit
 openapi: 3.0.0
 servers:
   - url: 'https://dispatch.eu.org/api/v1'
@@ -16,6 +19,7 @@ info:
   x-logo:
     url: 'https://dispatch.eu.org/assets/img/icons/logo.png'
     altText: Dispatch X logo
+  # TODO: change this description
   description: >
     This is an **example** API to demonstrate features of OpenAPI specification
 
