@@ -5,7 +5,11 @@
       "title": "DispatchX API",
       "license": {
         "name": "MIT"
-      }
+      },
+      "description": ">
+    # dispatchx
+    
+    - Dispatchx, the newest dispatch!"
     },
     "servers": [
       {
