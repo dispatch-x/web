@@ -1,0 +1,73 @@
+html {
+  font-family: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  padding: 2em;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+fluent-button {
+  font-family: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset, rgba(50, 50, 93, 0.1) 0 2px 5px 0, rgba(0, 0, 0, 0.07) 0 1px 1px 0;
+  transition: 0.2s;
+  border-radius: 8px !important;
+}
+fluent-button:active {
+  box-shadow: none !important;
+}
+
+.chat-box, chat-box {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.chat-box img[slot=image], .chat-box .profile img, chat-box img[slot=image], chat-box .profile img {
+  object-fit: cover;
+  height: 25px;
+  width: 25px;
+  border-radius: 50%;
+  bottom: 0;
+  position: relative;
+}
+.chat-box .profile, chat-box .profile {
+  height: 25px;
+  overflow: hidden;
+  width: 25px;
+  bottom: 0;
+  position: relative;
+}
+.chat-box .message-box, chat-box .message-box {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.chat-box .message-box *, chat-box .message-box * {
+  margin: 0;
+}
+.chat-box .user-name, .chat-box span[slot=username], chat-box .user-name, chat-box span[slot=username] {
+  color: #808080;
+  font-size: 0.7em;
+  margin-bottom: 2px;
+}
+.chat-box .message, .chat-box span[slot=message], chat-box .message, chat-box span[slot=message] {
+  border-radius: 8px;
+  padding: 10px;
+  color: #fff;
+  top: 10px;
+  position: relative;
+  background: rgba(0, 127, 255, 0.7490196078);
+}
+
+/*# sourceMappingURL=test.css.map */

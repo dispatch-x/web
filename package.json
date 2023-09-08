@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "@fluentui/web-components": "^2.5.16",
+    "@types/node": "^20.5.9",
+    "browserify": "^17.0.0",
+    "commonjs": "^0.0.1",
+    "sass": "^1.66.1",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "build": "npm run build-typescript && npm run build-browserify && npm run build-sass",
+    "build-typescript": "tsc",
+    "build-browserify": "browserify assets/scripts/js/fluent.js > assets/scripts/js/fluent.js",
+    "doiuse": "doiuse --browsers \"ie >= 9, > 1%, last 2 versions\" assets/css/style.css",
+    "build-sass": "sass assets/styles/scss:assets/styles/css"
+  }
+}

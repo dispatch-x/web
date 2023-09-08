@@ -1,3 +1,4 @@
+<!-- Make sure to execute `npm run build` first! -->
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -42,49 +43,38 @@
         <link rel="icon" href="images/icon/cropped-cropped-favicon-1-1-192x192.png" sizes="192x192" />
         <link rel="apple-touch-icon-precomposed" href="images/icon/cropped-cropped-favicon-1-1-180x180.png" />
         <meta name="msapplication-TileImage" content="images/icon/cropped-cropped-favicon-1-1-270x270.png" />
-        
+        <link rel="stylesheet" href="/assets/styles/css/test.css">
         <!--complete list of meta tags at - https://gist.github.com/lancejpollard/1978404 -->
-        <style>
-            @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
-            html {
-                font-family: 'Outfit', sans-serif;
-            }
-            html, body {
-                height: 100%;
-                width: 100%;
-            }
-            *, *::before, *::after {
-                box-sizing: border-box;
-            }
-            .button {
-                border: 1px solid transparent;
-                flex-grow: 1;
-                box-sizing: border-box;
-                display: inline-flex;
-                justify-content: center;
-                align-items: center;
-                padding: 0 calc((10 + (4 * 2 * 0) * 1px);
-                white-space: nowrap;
-                outline: none;
-                text-decoration: none;
-                color: inherit;
-                border-radius: inherit;
-                fill: inherit;
-                cursor: inherit;
-                font-family: inherit;
-            }
-        </style>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');</style>
     </head>
     <body>
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <h1>Dispatch <span>X</span></h1>
-        <button class="button">Test button</button>
+        <h1 style="margin-top: 0;">Dispatch <span>X</span></h1>
+        <fluent-button style="margin-bottom: 1em;" appearance="accent">Test button</fluent-button>
         
-        <script>
+        <div class="chat-box">
+            <div class="profile">
+                <img alt="Random woman" src="https://st.depositphotos.com/1770836/1372/i/450/depositphotos_13720689-stock-photo-young-businesswoman.jpg">
+            </div>
+            <div class="message-box">
+                <span class="user-name">Random Woman</span>
+                <div class="message">Hello World!</div>
+            </div>
+            
+        </div>
+        <chat-box><span slot="message">Hi, mom!</span><span slot="username">Daughter</span><img slot="image" alt="Random woman" src="https://st.depositphotos.com/1770836/1372/i/450/depositphotos_13720689-stock-photo-young-businesswoman.jpg"></chat-box>
 
+        <script>
+            // Small issue
+            var exports = {}; 
+
+            // Define custom element chat-bo
         </script>
-        <script src="https://kit.fontawesome.com/049529442a.js" crossorigin="anonymous"></script>
+        <script src="/assets/scripts/js/modules/chat-box.js"></script>
+        <script type="module" src="https://unpkg.com/@fluentui/web-components"></script>
+        <script src="/assets/scripts/js/fluent.js"></script>
+        <script src="/assets/scripts/js/fontawesome.js" crossorigin="anonymous"></script>
     </body>
 </html>

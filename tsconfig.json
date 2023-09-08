@@ -1,0 +1,9 @@
+{
+    "compilerOptions": {
+        "outDir": "assets/scripts/js/",
+        "types": [
+            "node"
+        ]
+    },
+    "include": ["assets/scripts/ts/*.ts"]
+  }
