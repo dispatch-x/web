@@ -265,6 +265,58 @@
               }
             }
         },
+        {
+        "/createuser": {
+            "get": {
+              "summary": "creates user account",
+              "operationId": "createAccount",
+              "parameters": [
+                {
+                  "name": "username",
+                  "in": "query",
+                  "description": "The username",
+                  "required": true,
+                  "schema": {
+                    "type": "string"
+                  }
+                },
+                {
+                    "name": "pass",
+                    "in": "query",
+                    "description": "The password",
+                    "required": true,
+                    "schema": {
+                      "type": "string"
+                    }
+                }
+              ],
+              "responses": {
+                "200": {
+                  "description": "Positive response",
+                  "content": {
+                    "application/json": {
+                        "schema": {
+                            "type": "integer",
+                            "minimum": 1,
+                            "maximum": 1,
+                            "format": "int64"
+                        }
+                    }
+                  }
+                },
+                "default": {
+                  "description": "Error creating account.",
+                  "content": {
+                    "application/json": {
+                      "schema": {
+                        "$ref": "#/components/schemas/error"
+                      }
+                    }
+                  }
+                }
+              }
+            }
+        },
         "/logout": {
             "get": {
               "summary": "Logs out of the account, destroying the session.",
