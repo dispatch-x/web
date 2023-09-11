@@ -12,17 +12,17 @@ fluent-button {
 }
 
 // Chat message
-// FIXME: broken padding, broken height
-.chat-box, chat-box {
+// FIXME: profile icon should align to bottom
+chat-box {
     display: flex;
     gap: 10px;
     align-items: center;
-    img[slot="image"], .profile img {
+    img[slot="image"]{
         object-fit: cover;
         height: 25px;
         width: 25px;
         border-radius: 50%;
-        bottom: 0;
+        bottom: -30px;
         position: relative;
     }
     .profile {
@@ -51,7 +51,7 @@ fluent-button {
         border-radius: 8px;
         padding: 10px;
         color: #fff;
-        top: 10px;
+        top: 12px;
         position: relative;
         background: #007FFFBF;
     }
