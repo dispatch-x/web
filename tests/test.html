@@ -52,9 +52,13 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         <h1 style="margin-top: 0;">Dispatch <span>X</span></h1>
-        <fluent-button style="margin-bottom: 1em;" appearance="accent">Test button</fluent-button>
+        <button class="d-button">Test button</button>
 
-        <chat-box><span slot="message">Hi, mom!</span><span slot="username">Daughter</span><img slot="image" alt="Random woman" src="https://st.depositphotos.com/1770836/1372/i/450/depositphotos_13720689-stock-photo-young-businesswoman.jpg"></chat-box>
+        <chat-box>
+            <span slot="message">Hi, mom!</span>
+            <span slot="username">Daughter</span>
+            <img slot="image" alt="Random woman" src="https://st.depositphotos.com/1770836/1372/i/450/depositphotos_13720689-stock-photo-young-businesswoman.jpg">
+        </chat-box>
 
         <script>
             // Small issue
@@ -62,7 +66,7 @@
         </script>
         <script src="/assets/scripts/js/modules/chat-box.js"></script>
         <script type="module" src="https://unpkg.com/@fluentui/web-components"></script>
-        <script src="/assets/scripts/js/fluent.js"></script>
+        <!-- <script src="/assets/scripts/js/fluent.js"></script> -->
         <script src="/assets/scripts/js/fontawesome.js" crossorigin="anonymous"></script>
     </body>
 </html>

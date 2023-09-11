@@ -1,18 +1,27 @@
 @use 'boilerplate';
 
 // Button
-fluent-button {
+.d-button {
+    padding: 10px;
+    border-radius: 10px;
+    border: 1px solid #0070e0;
+    background: #007FFF;
+    color: white;
     font-family: 'Outfit', boilerplate.$font-sans-serif;
-    box-shadow: rgba(50, 50, 93, .1) 0 0 0 1px inset,rgba(50, 50, 93, .1) 0 2px 5px 0,rgba(0, 0, 0, .07) 0 1px 1px 0;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     transition: 0.2s;
-    border-radius: 8px!important;
+    font-weight: 200;
+    &:hover {
+        background: #0079f1;
+    }
     &:active {
-        box-shadow: none!important;
+        box-shadow: none;
+        background: #0070e0;
     }
 }
 
 // Chat message
-// FIXME: profile icon should align to bottom
 chat-box {
     display: flex;
     gap: 10px;
@@ -54,6 +63,7 @@ chat-box {
         top: 12px;
         position: relative;
         background: #007FFFBF;
+        white-space: nowrap;
     }
 }
 
