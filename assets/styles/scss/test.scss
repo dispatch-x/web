@@ -1,13 +1,12 @@
 @use 'boilerplate';
 
-@import "../../../node_modules/bootstrap/scss/functions";
-
-// 2. Include any default variable overrides here
-
-// FIXME: Progress bars not working due to unimported variables
-// 3. Include remainder of required Bootstrap stylesheets
-@import "../../../node_modules/bootstrap/scss/variables";
-@import "../../../node_modules/bootstrap/scss/mixins";
+@import '../../../node_modules/bootstrap/scss/mixins';
+@import '../../../node_modules/bootstrap/scss/functions';
+@import '../../../node_modules/bootstrap/scss/variables';
+@import '../../../node_modules/bootstrap/scss/variables-dark';
+@import '../../../node_modules/bootstrap/scss/maps';
+@import '../../../node_modules/bootstrap/scss/utilities';
+@import '../../../node_modules/bootstrap/scss/root';
 
 @import "../../../node_modules/bootstrap/scss/progress";
 
@@ -81,6 +80,20 @@ chat-box {
 
 // Progress bar
 .progress {
-    height: 16px;
+    position: relative;
+    height: 7px;
     width: 100%;
+    margin-top: 10px;
+    .progress-bar {
+        background-color: #007FFF;
+    }
+}
+.progress[animation]::before {
+    position: absolute;
+    content: '';
+    background: white;
+    height: 100%;
+    width: 10px;
+    // FIXME: Add gradient on both sides
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
 }
