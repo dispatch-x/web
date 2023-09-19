@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "outDir": "assets/scripts/js/",
+        "outDir": "assets/js",
         "types": [
             "node"
         ]
