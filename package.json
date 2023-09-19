@@ -15,9 +15,9 @@
   },
   "scripts": {
     "preinstall": "npx npm-force-resolutions",
-    "build": "npm run build-typescript && npm run build-browserify && npm run build-sass",
+    "build": "npm run build-typescript && npm run build-browserify && npm run build-css",
     "build-typescript": "tsc",
-    "build-browserify": "browserify assets/scripts/js/fluent.js > assets/scripts/js/fluent.js",
+    "build-browserify": "browserify assets/scripts/js/test.js > assets/scripts/js/fluent.js",
     "doiuse": "doiuse --browsers \"ie >= 9, > 1%, last 2 versions\" assets/styles/css/style.css",
     "build-css": "gulp css",
     "build-sass-watch": "sass --watch assets/styles/scss:assets/styles/css"

@@ -253,6 +253,73 @@ body {
   }
 }
 
+.toast {
+  --bs-toast-zindex: 1090;
+  --bs-toast-padding-x: 0.75rem;
+  --bs-toast-padding-y: 0.5rem;
+  --bs-toast-spacing: 1.5rem;
+  --bs-toast-max-width: 350px;
+  --bs-toast-font-size: 0.875rem;
+  --bs-toast-color: ;
+  --bs-toast-bg: rgba(var(--bs-body-bg-rgb), 0.85);
+  --bs-toast-border-width: var(--bs-border-width);
+  --bs-toast-border-color: var(--bs-border-color-translucent);
+  --bs-toast-border-radius: var(--bs-border-radius);
+  --bs-toast-box-shadow: var(--bs-box-shadow);
+  --bs-toast-header-color: var(--bs-secondary-color);
+  --bs-toast-header-bg: rgba(var(--bs-body-bg-rgb), 0.85);
+  --bs-toast-header-border-color: var(--bs-border-color-translucent);
+  width: var(--bs-toast-max-width);
+  max-width: 100%;
+  font-size: var(--bs-toast-font-size);
+  color: var(--bs-toast-color);
+  pointer-events: auto;
+  background-color: var(--bs-toast-bg);
+  background-clip: padding-box;
+  border: var(--bs-toast-border-width) solid var(--bs-toast-border-color);
+  box-shadow: var(--bs-toast-box-shadow);
+  border-radius: var(--bs-toast-border-radius);
+}
+.toast.showing {
+  opacity: 0;
+}
+.toast:not(.show) {
+  display: none;
+}
+
+.toast-container {
+  --bs-toast-zindex: 1090;
+  position: absolute;
+  z-index: var(--bs-toast-zindex);
+  width: max-content;
+  max-width: 100%;
+  pointer-events: none;
+}
+.toast-container > :not(:last-child) {
+  margin-bottom: var(--bs-toast-spacing);
+}
+
+.toast-header {
+  display: flex;
+  align-items: center;
+  padding: var(--bs-toast-padding-y) var(--bs-toast-padding-x);
+  color: var(--bs-toast-header-color);
+  background-color: var(--bs-toast-header-bg);
+  background-clip: padding-box;
+  border-bottom: var(--bs-toast-border-width) solid var(--bs-toast-header-border-color);
+  border-top-left-radius: calc(var(--bs-toast-border-radius) - var(--bs-toast-border-width));
+  border-top-right-radius: calc(var(--bs-toast-border-radius) - var(--bs-toast-border-width));
+}
+.toast-header .btn-close {
+  margin-right: calc(-0.5 * var(--bs-toast-padding-x));
+  margin-left: var(--bs-toast-padding-x);
+}
+
+.toast-body {
+  padding: var(--bs-toast-padding-x);
+  word-wrap: break-word;
+}
+
 .d-button {
   padding: 10px;
   border-radius: 10px;
@@ -328,13 +395,58 @@ chat-box .message, chat-box span[slot=message] {
   background-color: #007FFF;
 }
 
-.progress[animation]::before {
+/* .progress[animation]::before {
+    position: absolute;
+    content: '';
+    background: white;
+    height: 100%;
+    width: 10px;
+    // FIXME: Add gradient on both sides
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+} */
+.toast-container {
   position: absolute;
-  content: "";
-  background: white;
+  bottom: 0;
+  right: 0;
+  margin: 10px;
+  width: calc(100% - 20px);
+}
+
+.toast-header {
+  display: flex;
+  justify-content: space-between;
+}
+.toast-header .toast-content, .toast-header .toast-utils {
+  display: flex;
+  gap: 5px;
+  align-items: center;
   height: 100%;
-  width: 10px;
-  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+}
+.toast-header .toast-content .btn-close, .toast-header .toast-utils .btn-close {
+  background: transparent;
+  border: 0;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+.toast-header .toast-content .btn-close svg, .toast-header .toast-utils .btn-close svg {
+  height: 1.5em;
+  width: 1.5em;
+  opacity: 0.5;
+}
+
+.toast {
+  margin: 0;
+  width: 100%;
+}
+
+.toast-img {
+  aspect-ratio: 1/1;
+  background: blue;
+  height: 100%;
+  width: 15px;
+  border-radius: 2px;
 }
 
 /*# sourceMappingURL=test.css.map */

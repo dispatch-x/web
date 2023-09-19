@@ -17,3 +17,17 @@ gulp.task('css', function () {
 		.pipe(postcss(processors))
 		.pipe(gulp.dest('./assets/styles/css'));
 });
+
+var browserify = require('browserify');
+var source = require('vinyl-source-stream');
+
+gulp.task('js', function() {
+	var browserified = transform(function(filename) {
+		return browserify(filename).bundle();
+	});
+    //Pass desired output filename to vinyl-source-stream
+    return gulp.src('./assets/scripts/js/*.js')
+		.pipe(browserified)
+		.pipe(gulp.dest('./assets/scripts/js/'));
+		// TODO: test
+});

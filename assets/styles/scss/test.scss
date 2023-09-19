@@ -9,6 +9,7 @@
 @import '../../../node_modules/bootstrap/scss/root';
 
 @import "../../../node_modules/bootstrap/scss/progress";
+@import "../../../node_modules/bootstrap/scss/toasts";
 
 // Button
 .d-button {
@@ -88,7 +89,7 @@ chat-box {
         background-color: #007FFF;
     }
 }
-.progress[animation]::before {
+/* .progress[animation]::before {
     position: absolute;
     content: '';
     background: white;
@@ -96,4 +97,49 @@ chat-box {
     width: 10px;
     // FIXME: Add gradient on both sides
     -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%);
+} */
+
+// Toasts
+.toast-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 10px;
+    width: calc(100% - 20px);
 }
+.toast-header {
+    display: flex;
+    justify-content: space-between;
+    .toast-content, .toast-utils {
+        display: flex;
+        gap: 5px;
+        align-items: center;
+        height: 100%;
+        .btn-close {
+            background: transparent;
+            border: 0;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            svg {
+                height: 1.5em;
+                width: 1.5em;
+                opacity: .5;
+            }
+        }
+    }
+}
+.toast {
+    margin: 0;
+    width: 100%;
+}
+// TEMP: replace with IMG
+.toast-img {
+    aspect-ratio: 1 / 1;
+    background: blue;
+    height: 100%;
+    width: 15px;
+    border-radius: 2px;
+}
+
