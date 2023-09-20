@@ -52,3 +52,8 @@
     left: 0;
     position: relative;
 }
+.check-box {
+    $check-box-margin: -15px;
+    margin-top: $check-box-margin;
+    margin-bottom: $check-box-margin;
+}

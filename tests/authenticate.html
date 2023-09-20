@@ -62,7 +62,7 @@
         <h1 class="logo">LOGO</h1>
         <h1 class="login-heading">Sign in</h1>
         
-        <div class="v-stack">
+        <div class="v-stack" id="loginForm" hidden>
             <div class="input-group">
                 <div class="input-group-text">@</div>
                 <div class="form-floating">
@@ -78,15 +78,79 @@
                 </div>
             </div>
 
-            <button class="d-button login-button">Sign in</button>
+            <button class="d-button login-button" id="loginButton">Sign in</button>
             <hr>
             <div style="display: flex; justify-content: baseline;">
                 <a class="d-a register-prompt" href="#">No account? Register!</a>
             </div>
             
         </div>
+
+        <div class="v-stack" id="regForm">
+            <div class="input-group">
+                <div class="input-group-text">@</div>
+                <div class="form-floating">
+                    <input minlength="5" required type="text" class="form-control" id="floatingInput" placeholder="username">
+                    <label for="floatingInput">Username</label>
+                </div>
+            </div>
+            <div class="input-group">
+                <div class="form-floating">
+                    <input required name="email" type="email" class="form-control" id="floatingInput" placeholder="username">
+                    <label for="floatingInput">E-mail</label>
+                </div>
+            </div>
+
+            <div class="input-group">
+                <div class="form-floating">
+                    <input minlength="8" required type="password" class="form-control" id="floatingInput1" placeholder="*******">
+                    <label for="floatingInput1">Password</label>
+                </div>
+            </div>
+
+            <div class="input-group" style="margin-top: -20px;">
+                <div class="form-floating">
+                    <input minlength="8" required type="password" class="form-control" id="floatingInput1" placeholder="*******">
+                    <label for="floatingInput1">Repeat Password</label>
+                </div>
+            </div>
+
+            <div class="form-check check-box">
+                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                <label class="form-check-label" for="flexCheckDefault">
+                  I agree to the <a href="#">terms and conditions</a>
+                </label>
+              </div>
+
+            <button class="d-button login-button" id="loginButton">Register</button>
+            <hr>
+            <div style="display: flex; justify-content: baseline;">
+                <a class="d-a register-prompt" href="#">Have an account? Login!</a>
+            </div>
+        </div>
         
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" defer></script>
         <script src="/assets/js/dist/fontawesome.js" crossorigin="anonymous"></script>
-        <script src="" async defer></script>
+        <script defer>
+            // TODO: fix this
+            $(document).ready(function(){
+            $("#regForm").validate({
+                rules: {
+                myDropDown:{
+                    required: function (element) {
+                        if($("#myCheckbox").is(':checked')){
+                            var e = document.getElementById("myDropDown");
+                            return e.options[e.selectedIndex].value=="" ;                            
+                        }
+                        else
+                        {
+                            return false;
+                        }  
+                    }  
+                }
+                }
+            });
+            });
+        </script>
     </body>
 </html>
