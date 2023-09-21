@@ -43,6 +43,16 @@
 .login-button {
     font-size: 1.5em;
 }
+.login-button[disabled] {
+    background: $gray-600;
+    border: 1px solid $gray-700;
+    cursor: not-allowed;
+    &:hover {
+        background: $gray-600;
+        border: 1px solid $gray-700;
+        box-shadow: 0;
+    }
+}
 .register-prompt {
     margin-top: -1em;
     display: initial;
@@ -53,7 +63,31 @@
     position: relative;
 }
 .check-box {
-    $check-box-margin: -15px;
+    $check-box-margin: -5px;
     margin-top: $check-box-margin;
-    margin-bottom: $check-box-margin;
+    margin-bottom: -15px;
+    padding-left: 0;
+}
+
+input.error {
+    border-bottom: 2px solid $red;
+}
+label.error {
+    color: $red!important;
+    margin-top: 52px;
+    padding-left: 0;
+    background: transparent;
+    border: 0;
+    z-index: -1;
+    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+}
+.error1 {
+    color: $red;
+    padding-left: 0;
+    padding-top: 5px;
+    margin-left: -5px;
+    background: transparent;
+    border: 0;
+    z-index: -1;
+    transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
 }
