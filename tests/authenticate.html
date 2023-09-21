@@ -81,7 +81,7 @@
     
                     <div class="input-group">
                         <div class="form-floating">
-                            <input type="password" name="password" class="form-control" id="passInput" placeholder="*******">
+                            <input type="password" name="password" class="form-control" id="passwInput" placeholder="*******">
                             <label for="floatingInput1">Password</label>
                         </div>
                     </div>
@@ -214,7 +214,7 @@
 
             $("loginForm").submit(function(){
                 var username = $('#logInput').text();
-                var password = $('#passInput').text();
+                var password = $('#passwInput').text();
                 $.ajax('/api/v1/login.php', {
                     type: 'POST',  // http method
                     data: { username: username, password: password },  // TODO: encrypt pass
