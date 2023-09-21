@@ -21,9 +21,7 @@
 .logo {
     text-align: center;
 }
-body {
-    padding: 0;
-}
+
 .input-group {
     display: flex;
     flex-direction: row;
@@ -110,6 +108,7 @@ label.error {
     height: 100%;
     position: absolute;
     z-index: -2;
+    object-fit: cover;
 }
 
 
@@ -129,9 +128,19 @@ label.error {
             width: 100%;
         }
     }
+    .login-wrapper {
+        padding: 25px;
+        border: 2px solid #dee2e6;
+        border-radius: 1em 0 0 1em;
+        box-shadow: 0 1rem 6rem 20px rgba(0, 0, 0, 0.175);
+    }
     .background {
         display: block;
     }
+    body {
+        padding: 0;
+    }
+    
 }
 
 @include media-breakpoint-up(lg) {
