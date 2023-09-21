@@ -62,77 +62,85 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
+        <img class="background" src="/assets/img/backgrounds/bg-1.jpg">
+        <div class="login-wrapper-wrapper">
+            <div class="login-wrapper">
+                <h1 class="logo">LOGO</h1>
+                
+                
+                
+                <form class="v-stack" id="loginForm">
+                    <h1 class="login-heading">Sign in</h1>
+                    <div class="input-group">
+                        <div class="input-group-text">@</div>
+                        <div class="form-floating">
+                            <input type="text" name="username" class="form-control" id="logInput" placeholder="username">
+                            <label for="floatingInput">Username</label>
+                        </div>
+                    </div>
+    
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <input type="password" name="password" class="form-control" id="passInput" placeholder="*******">
+                            <label for="floatingInput1">Password</label>
+                        </div>
+                    </div>
+    
+                    <input type="submit" id="loginButton" value="Sign in" class="d-button login-button">
+                    <hr>
+                    <div style="display: flex; justify-content: baseline;">
+                        <a class="d-a register-prompt" onclick="showRegister()">No account? Register!</a>
+                    </div>
+                    
+                </form>
+    
+                <form class="v-stack" id="regForm" style="display: none;">
+                    <h1 class="login-heading">Register</h1>
+                    <div class="input-group">
+                        <div class="input-group-text">@</div>
+                        <div class="form-floating">
+                            <input minlength="5" name="username" required type="text" class="form-control" id="nameInput" placeholder="username">
+                            <label for="floatingInput">Username</label>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <input required name="email" type="email" class="form-control" id="mailInput" placeholder="username">
+                            <label for="floatingInput">E-mail</label>
+                        </div>
+                    </div>
+    
+                    <div class="input-group">
+                        <div class="form-floating">
+                            <input minlength="8" name="password" type="password" class="form-control" id="passInput" placeholder="*******">
+                            <label for="passInput1">Password</label>
+                        </div>
+                    </div>
+    
+                    <div class="input-group" style="margin-top: -7px;">
+                        <div class="form-floating">
+                            <input minlength="8" required name="password1" type="password" class="form-control" id="passInput1" placeholder="*******">
+                            <label for="passInput1">Repeat Password</label>
+                        </div>
+                    </div>
+    
+                    <div class="form-check check-box">
+                        <input style="width: auto;" requiredclass="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                        I agree to the <a href="#">terms and conditions</a>
+                        </label>
+                        <label style="padding-left: 2px; display: none;" for="flexCheckDefault" id="checkBoxErr" class="error1">Please check this box.</label>
+                    </div>
+    
+                    <input type="submit" id="registerButton" value="Register" class="d-button login-button">
+                    <hr>
+                    <div style="display: flex; justify-content: baseline;">
+                        <a class="d-a register-prompt" onclick="showLogin()">Have an account? Login!</a>
+                    </div>
+                </form>
+            </div>
+        </div>
         
-        <h1 class="logo">LOGO</h1>
-        <h1 class="login-heading">Sign in</h1>
-        
-        <form class="v-stack" id="loginForm">
-            <div class="input-group">
-                <div class="input-group-text">@</div>
-                <div class="form-floating">
-                    <input type="text" name="username" class="form-control" id="logInput" placeholder="username">
-                    <label for="floatingInput">Username</label>
-                </div>
-            </div>
-
-            <div class="input-group">
-                <div class="form-floating">
-                    <input type="password" name="password" class="form-control" id="passInput" placeholder="*******">
-                    <label for="floatingInput1">Password</label>
-                </div>
-            </div>
-
-            <input type="submit" id="loginButton" value="Sign in" class="d-button login-button">
-            <hr>
-            <div style="display: flex; justify-content: baseline;">
-                <a class="d-a register-prompt" onclick="showRegister()">No account? Register!</a>
-            </div>
-            
-        </form>
-
-        <form class="v-stack" id="regForm" style="display: none;">
-            <div class="input-group">
-                <div class="input-group-text">@</div>
-                <div class="form-floating">
-                    <input minlength="5" name="username" required type="text" class="form-control" id="nameInput" placeholder="username">
-                    <label for="floatingInput">Username</label>
-                </div>
-            </div>
-            <div class="input-group">
-                <div class="form-floating">
-                    <input required name="email" type="email" class="form-control" id="mailInput" placeholder="username">
-                    <label for="floatingInput">E-mail</label>
-                </div>
-            </div>
-
-            <div class="input-group">
-                <div class="form-floating">
-                    <input minlength="8" name="password" type="password" class="form-control" id="passInput" placeholder="*******">
-                    <label for="passInput1">Password</label>
-                </div>
-            </div>
-
-            <div class="input-group" style="margin-top: -7px;">
-                <div class="form-floating">
-                    <input minlength="8" required name="password1" type="password" class="form-control" id="passInput1" placeholder="*******">
-                    <label for="passInput1">Repeat Password</label>
-                </div>
-            </div>
-
-            <div class="form-check check-box">
-                <input style="width: auto;" requiredclass="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <label class="form-check-label" for="flexCheckDefault">
-                  I agree to the <a href="#">terms and conditions</a>
-                </label>
-                <label style="padding-left: 2px; display: none;" for="flexCheckDefault" id="checkBoxErr" class="error1">Please check this box.</label>
-              </div>
-
-            <input type="submit" id="registerButton" value="Register" class="d-button login-button">
-            <hr>
-            <div style="display: flex; justify-content: baseline;">
-                <a class="d-a register-prompt" onclick="showLogin()">Have an account? Login!</a>
-            </div>
-        </form>
         
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
         
