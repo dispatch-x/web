@@ -47,6 +47,10 @@
         <!--powered by meta-->
         <meta name="generator" content="" />
         <!-- Site fevicon icons -->
+        
+        <link rel="preload" href="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" as="script">
+        <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js" as="script">
+
         <link rel="icon" href="images/icon/cropped-cropped-favicon-1-1-32x32.png" sizes="32x32" />
         <link rel="icon" href="images/icon/cropped-cropped-favicon-1-1-192x192.png" sizes="192x192" />
         <link rel="apple-touch-icon-precomposed" href="images/icon/cropped-cropped-favicon-1-1-180x180.png" />
@@ -62,7 +66,7 @@
         <h1 class="logo">LOGO</h1>
         <h1 class="login-heading">Sign in</h1>
         
-        <div class="v-stack" id="loginForm" hidden>
+        <div class="v-stack" id="loginForm">
             <div class="input-group">
                 <div class="input-group-text">@</div>
                 <div class="form-floating">
@@ -90,27 +94,27 @@
             <div class="input-group">
                 <div class="input-group-text">@</div>
                 <div class="form-floating">
-                    <input minlength="5" required type="text" class="form-control" id="floatingInput" placeholder="username">
+                    <input minlength="5" required type="text" class="form-control" id="nameInput" placeholder="username">
                     <label for="floatingInput">Username</label>
                 </div>
             </div>
             <div class="input-group">
                 <div class="form-floating">
-                    <input required name="email" type="email" class="form-control" id="floatingInput" placeholder="username">
+                    <input required name="email" type="email" class="form-control" id="mailInput" placeholder="username">
                     <label for="floatingInput">E-mail</label>
                 </div>
             </div>
 
             <div class="input-group">
                 <div class="form-floating">
-                    <input minlength="8" required type="password" class="form-control" id="floatingInput1" placeholder="*******">
+                    <input minlength="8" required type="password" class="form-control" id="passInput" placeholder="*******">
                     <label for="floatingInput1">Password</label>
                 </div>
             </div>
 
             <div class="input-group" style="margin-top: -20px;">
                 <div class="form-floating">
-                    <input minlength="8" required type="password" class="form-control" id="floatingInput1" placeholder="*******">
+                    <input minlength="8" required type="password" class="form-control" id="passInput1" placeholder="*******">
                     <label for="floatingInput1">Repeat Password</label>
                 </div>
             </div>
@@ -129,27 +133,33 @@
             </div>
         </div>
         
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js" defer></script>
-        <script src="/assets/js/dist/fontawesome.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        
+        <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+
+        <script src="/assets/js/dist/fontawesome.js" crossorigin="anonymous" defer></script>
         <script defer>
             // TODO: fix this
-            $(document).ready(function(){
-            $("#regForm").validate({
-                rules: {
-                myDropDown:{
-                    required: function (element) {
-                        if($("#myCheckbox").is(':checked')){
-                            var e = document.getElementById("myDropDown");
-                            return e.options[e.selectedIndex].value=="" ;                            
-                        }
-                        else
-                        {
-                            return false;
+            $().ready(function(){
+
+                $("#regForm").validate({
+                    rules: {
+                    regForm:{
+                        required: function (element) {
+                            if($("#flexCheckDefault").is(':checked')){
+                                var e = document.getElementById("myDropDown");
+                                return e.options[e.selectedIndex].value=="" ;                            
+                            }
+                            else
+                            {
+                                return false;
+                            }  
                         }  
-                    }  
-                }
-                }
-            });
+                    }
+                    }
+                });
+
+                
             });
         </script>
     </body>
