@@ -1,6 +1,5 @@
 {
   "dependencies": {
-    "@fluentui/web-components": "^2.5.16",
     "@types/node": "^20.5.9",
     "autoprefixer": "^10.4.15",
     "bootstrap": "^5.3.1",
@@ -18,7 +17,7 @@
     "sass": "^1.66.1"
   },
   "scripts": {
-    "preinstall": "npx npm-force-resolutions",
+    "preinstall": "npm install --package-lock-only --ignore-scripts && npx npm-force-resolutions",
     "build": "npm run build-css && npm run build-js",
     "doiuse": "doiuse --browsers \"ie >= 9, > 1%, last 2 versions\" assets/styles/css/style.css",
     "build-css": "gulp css",
