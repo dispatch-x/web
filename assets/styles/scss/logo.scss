@@ -1,0 +1,35 @@
+@use 'main';
+
+$primary: #337def;
+$secondary: #fcc729;
+$secondary-tinted: #f49f1c;
+
+body {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+h1 {
+    display: flex;
+    span {
+        text-decoration: underline;
+        font-size: 2em;
+        margin: 0 -1px;
+        color: $secondary;
+        height: auto;
+    }
+    .D {
+        font-size: 2.5em;
+        color: $primary;
+        border: 0;
+    }
+    .h {
+        transform: rotate(25deg) translateY(3px);
+        margin-left: 7px;
+        color: $secondary-tinted;
+        border: 0;
+        // text-decoration: none; // Good idea?
+    }
+}
