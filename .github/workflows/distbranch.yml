@@ -37,12 +37,13 @@ jobs:
     - name: Commit files
       run: |
         git config user.email github-actions@github.com
-        git config user.name github-actions
-        git diff --exit-code || git commit -m "Add changes" -a
+        git config user.name "github-actions[bot]"
+        git diff --exit-code || git commit -m "Add changes"
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: main
   deploy:
     name: Deploy
     needs: imgmove
@@ -64,13 +65,14 @@ jobs:
     - name: Commit files
       run: |
         git config user.email github-actions@github.com
-        git config user.name github-actions
+        git config user.name "github-actions[bot]"
         git diff --exit-code || git commit -m "Add changes" -a
         git pull
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: main
 
   deploypages:
     environment:
