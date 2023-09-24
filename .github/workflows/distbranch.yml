@@ -42,6 +42,7 @@ jobs:
         git add .
         git commit -m "Add images to dist"
         git pull
+        git config pull.rebase false  # merge
         git push
   deploy:
     name: Deploy
@@ -70,6 +71,7 @@ jobs:
         git add .
         git commit -m "Build static website"
         git pull
+        git config pull.rebase false  # merge
         git push
 
   deploypages:
