@@ -34,16 +34,11 @@ jobs:
         mkdir dist/img
         cp -r assets/img dist
         git add --all
-    - name: Check if there are any changes
-      id: verify_diff
-      run: |
-          git diff --quiet . || echo "changed=true" >> $GITHUB_OUTPUT
     - name: Commit files
-      if: steps.verify_diff.outputs.changed == 'true'
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git commit -m "Add changes" -a
+        git diff --exit-code || git commit -m "Add changes" -a
     - name: Push changes
       uses: ad-m/github-push-action@master
       with:
@@ -66,16 +61,11 @@ jobs:
         npm install
         npx npm-force-resolutions
         npm run build
-    - name: Check if there are any changes
-      id: verify_diff
-      run: |
-          git diff --quiet . || echo "changed=true" >> $GITHUB_OUTPUT
     - name: Commit files
-      if: steps.verify_diff.outputs.changed == 'true'
       run: |
         git config --local user.email "action@github.com"
         git config --local user.name "GitHub Action"
-        git commit -m "Add changes" -a
+        git diff --exit-code || git commit -m "Add changes" -a
         git pull
     - name: Push changes
       uses: ad-m/github-push-action@master
