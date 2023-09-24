@@ -34,6 +34,15 @@ jobs:
         mkdir dist
         mkdir dist/img
         cp -r assets/img dist
+    - name: Commit files
+      run: |
+        date > latest.txt
+        git config user.email "action@github.com"
+        git config user.name "github-actions[bot]"
+        git add .
+        git commit -m "Add images to dist"
+        git pull
+        git push
   deploy:
     name: Deploy
     needs: imgmove
@@ -56,7 +65,7 @@ jobs:
     - name: Commit files
       run: |
         date > latest.txt
-        git config user.email "github-actions@github.com"
+        git config user.email "action@github.com"
         git config user.name "github-actions[bot]"
         git add .
         git commit -m "Build static website"
