@@ -36,8 +36,8 @@ jobs:
         git add --all
     - name: Commit files
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        git config user.email github-actions@github.com
+        git config user.name github-actions
         git diff --exit-code || git commit -m "Add changes" -a
     - name: Push changes
       uses: ad-m/github-push-action@master
@@ -63,8 +63,8 @@ jobs:
         npm run build
     - name: Commit files
       run: |
-        git config --local user.email "action@github.com"
-        git config --local user.name "GitHub Action"
+        git config user.email github-actions@github.com
+        git config user.name github-actions
         git diff --exit-code || git commit -m "Add changes" -a
         git pull
     - name: Push changes
