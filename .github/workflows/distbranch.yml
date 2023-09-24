@@ -36,7 +36,7 @@ jobs:
         cp -r assets/img dist
     - name: Commit files
       run: |
-        date > latest.txt
+        date > latest1.txt
         git config user.email "action@github.com"
         git config user.name "github-actions[bot]"
         git add .
