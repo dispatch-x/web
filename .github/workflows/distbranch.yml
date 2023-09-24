@@ -29,7 +29,7 @@ jobs:
     - uses: actions/checkout@master
     - name: Copy the Readmes
       run: |
-        rm -rf dist/*
+        rm -rf dist
         mkdir dist
         mkdir dist/img
         cp -r assets/img dist/img
