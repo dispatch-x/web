@@ -56,7 +56,7 @@ jobs:
     - name: Commit files
       run: |
         date > latest.txt
-        git config user.email github-actions@github.com
+        git config user.email "github-actions@github.com"
         git config user.name "github-actions[bot]"
         git add .
         git commit -m "Build static website"
