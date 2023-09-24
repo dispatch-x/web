@@ -63,8 +63,6 @@ jobs:
         node-version: 20.x
     - name: npm install and build
       run: |
-        rm package_lock.json
-        rm node_modules/.package_lock.json
         npm install
         npx npm-force-resolutions
         npm run build
