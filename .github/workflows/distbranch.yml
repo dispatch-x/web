@@ -10,7 +10,7 @@ on:
     - cron: '37 5 * * 5'
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   deploy:
