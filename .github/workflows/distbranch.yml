@@ -30,6 +30,7 @@ jobs:
     - name: Copy the Readmes
       run: |
         rm -rf dist/*
+        mkdir dist/img
         cp -r assets/img dist/img
         git add --all
     - name: Commit files
