@@ -72,6 +72,7 @@ gulp.task('fixpaths', gulp.series('remaining', function () {
     .pipe(plumber())
     .pipe(replace('/assets/styles/css', '/css'))
     .pipe(replace('/assets/js', '/js'))
+    .pipe(replace('/assets/js/dist', '/js'))
     .pipe(replace('/assets/img', '/img'))
     .pipe(gulp.dest('./dist'));
 }));
