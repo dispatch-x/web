@@ -23,7 +23,6 @@ concurrency:
 jobs:
   deploy:
     name: Deploy
-    needs: imgmove
     runs-on: ubuntu-latest
     steps:
 
