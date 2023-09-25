@@ -1,6 +1,6 @@
 ## dispatchx
 
-**Happy Bug Fixing Week! (last weel of every month)**
+**Happy Bug Fixing Week! (last week of every month)**
 
 Things getting fixed this week:
 
