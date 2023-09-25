@@ -1,5 +1,12 @@
 ## dispatchx
 
+**Happy Bug Fixing Week! (last week of every month)**
+
+Things getting fixed this week:
+
+* Domain (cloudflare fixed)
+* Hosting (gh-pages and seperate api? Replit?)
+
 (p.s i am now commiting with messages that are actually kind of useful. if you want to join me then please do)
 
 *Please note that this project is very much a work in progress. Tread with caution.*

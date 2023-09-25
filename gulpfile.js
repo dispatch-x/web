@@ -70,8 +70,9 @@ gulp.task('remaining', gulp.series('css', 'js', function() {
 gulp.task('fixpaths', gulp.series('remaining', function () {
   return gulp.src('dist/**/*.html')
     .pipe(plumber())
-    .pipe(replace('/assets/styles/css', './css'))
-    .pipe(replace('/assets/js', './js'))
+    .pipe(replace('/assets/styles/css', '/css'))
+    .pipe(replace('/assets/js', '/js'))
+    .pipe(replace('/assets/img', '/img'))
     .pipe(gulp.dest('./dist'));
 }));
 
