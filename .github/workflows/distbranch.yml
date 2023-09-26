@@ -30,11 +30,6 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v4
 
-    - name: Compress Images
-      uses: nemeaXYZ/webp-optimizer@v1.0.0-alpha
-      with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
-
     - name: Copy the images
       run: |
         rm -rf dist
