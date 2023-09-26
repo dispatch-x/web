@@ -57,80 +57,80 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <img class="na" src="/img/backgrounds/bg-1.jpg">
-        <div class="nf">
-            <div class="nu">
-                <h1 class="nt">LOGO</h1>
+        <img class="npl" src="/img/backgrounds/bg-1.jpg">
+        <div class="npc">
+            <div class="npf">
+                <h1 class="npr">LOGO</h1>
                 
                 
                 
-                <form class="p" id="loginForm">
-                    <h1 class="ne">Sign in</h1>
-                    <div class="tp">
-                        <div class="td">@</div>
-                        <div class="th">
-                            <input type="text" name="username" class="k" id="logInput" placeholder="username">
+                <form class="d" id="loginForm">
+                    <h1 class="npn">Sign in</h1>
+                    <div class="nlm">
+                        <div class="nlg">@</div>
+                        <div class="nlv">
+                            <input type="text" name="username" class="nfq" id="logInput" placeholder="username">
                             <label for="floatingInput">Username</label>
                         </div>
                     </div>
     
-                    <div class="tp">
-                        <div class="th">
-                            <input type="password" name="password" class="k" id="passwInput" placeholder="*******">
+                    <div class="nlm">
+                        <div class="nlv">
+                            <input type="password" name="password" class="nfq" id="passwInput" placeholder="*******">
                             <label for="floatingInput1">Password</label>
                         </div>
                     </div>
     
-                    <input type="submit" id="loginButton" value="Sign in" class="h nn">
+                    <input type="submit" id="loginButton" value="Sign in" class="h npi">
                     <hr>
                     <div style="display: flex; justify-content: baseline;">
-                        <a class="d nr" onclick="showRegister()">No account? Register!</a>
+                        <a class="v nps" onclick="showRegister()">No account? Register!</a>
                     </div>
                     
                 </form>
     
-                <form class="p" id="regForm" style="display: none;">
-                    <h1 class="ne">Register</h1>
-                    <div class="tp">
-                        <div class="td">@</div>
-                        <div class="th">
-                            <input minlength="5" name="username" required="" type="text" class="k" id="nameInput" placeholder="username">
+                <form class="d" id="regForm" style="display: none;">
+                    <h1 class="npn">Register</h1>
+                    <div class="nlm">
+                        <div class="nlg">@</div>
+                        <div class="nlv">
+                            <input minlength="5" name="username" required="" type="text" class="nfq" id="nameInput" placeholder="username">
                             <label for="floatingInput">Username</label>
                         </div>
                     </div>
-                    <div class="tp">
-                        <div class="th">
-                            <input required="" name="email" type="email" class="k" id="mailInput" placeholder="username">
+                    <div class="nlm">
+                        <div class="nlv">
+                            <input required="" name="email" type="email" class="nfq" id="mailInput" placeholder="username">
                             <label for="floatingInput">E-mail</label>
                         </div>
                     </div>
     
-                    <div class="tp">
-                        <div class="th">
-                            <input minlength="8" name="password" type="password" class="k" id="passInput" placeholder="*******">
+                    <div class="nlm">
+                        <div class="nlv">
+                            <input minlength="8" name="password" type="password" class="nfq" id="passInput" placeholder="*******">
                             <label for="passInput1">Password</label>
                         </div>
                     </div>
     
-                    <div class="tp" style="margin-top: -7px;">
-                        <div class="th">
-                            <input minlength="8" required="" name="password1" type="password" class="k" id="passInput1" placeholder="*******">
+                    <div class="nlm" style="margin-top: -7px;">
+                        <div class="nlv">
+                            <input minlength="8" required="" name="password1" type="password" class="nfq" id="passInput1" placeholder="*******">
                             <label for="passInput1">Repeat Password</label>
                         </div>
                     </div>
     
-                    <div class="tr ni">
+                    <div class="nlo npo">
                         <input style="width: auto;" requiredclass="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                        <label class="to" for="flexCheckDefault">
+                        <label class="nlf" for="flexCheckDefault">
                         I agree to the <a href="#">terms and conditions</a>
                         </label>
-                        <label style="padding-left: 2px; display: none;" for="flexCheckDefault" id="checkBoxErr" class="no">Please check this box.</label>
+                        <label style="padding-left: 2px; display: none;" for="flexCheckDefault" id="checkBoxErr" class="npa">Please check this box.</label>
                     </div>
     
-                    <input type="submit" id="registerButton" value="Register" class="h nn">
+                    <input type="submit" id="registerButton" value="Register" class="h npi">
                     <hr>
                     <div style="display: flex; justify-content: baseline;">
-                        <a class="d nr" onclick="showLogin()">Have an account? Login!</a>
+                        <a class="v nps" onclick="showLogin()">Have an account? Login!</a>
                     </div>
                 </form>
             </div>
@@ -151,11 +151,11 @@
                 }
 
                 var isDisabled = false;
-                if (document.querySelector(".ns") != null) {
+                if (document.querySelector(".npu") != null) {
                     
-                    for (const ele of document.querySelectorAll(".ns")) {
+                    for (const ele of document.querySelectorAll(".npu")) {
                         if (ele.style.display !== "none") {
-                            $("#registerButton").prop("disabled", true);
+                            $("#registerButton").prop("nc_", true);
                             isDisabled = true;
                             break;
                         }
@@ -166,10 +166,10 @@
                 }
 
                 if (isDisabled == false) {
-                    $("#registerButton").prop("disabled", false);
+                    $("#registerButton").prop("nc_", false);
                 }
                 else if (isDisabled == true) {
-                    $("#registerButton").prop("disabled", true);
+                    $("#registerButton").prop("nc_", true);
                 }
             }
 
