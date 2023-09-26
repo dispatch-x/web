@@ -7,10 +7,7 @@ View more on the wiki.
 
 --> **Happy Bug Fixing Week! (last week of every month)**
 
-Things getting fixed this week:
 
-* ~~Domain (cloudflare fixed)~~
-* ~~Hosting (gh-pages and separate api)~~ Replit
 
 (p.s i am now committing with messages that are actually kind of useful. if you want to join me then please do)
 
