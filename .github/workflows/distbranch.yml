@@ -30,6 +30,22 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v4
 
+    - name: Compress Images
+      id: calibre
+      uses: calibreapp/image-actions@main
+      with:
+          ignorePaths: 'node_modules/**,build'
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          compressOnly: true
+    - name: Create New Pull Request If Needed
+      if: steps.calibre.outputs.markdown != ''
+      uses: peter-evans/create-pull-request@v4
+      with:
+          title: Compressed Images Nightly
+          branch-suffix: timestamp
+          commit-message: Compressed Images
+          body: ${{ steps.calibre.outputs.markdown }}
+
     - name: Copy the images
       run: |
         rm -rf dist
