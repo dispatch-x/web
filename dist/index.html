@@ -29,6 +29,16 @@
         <meta name="twitter:creator" content="@uimaxbai">
         <link rel="stylesheet" href="/css/index.css">
         <meta name="google-site-verification" content="">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/img/logo/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/img/logo/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/img/logo/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+        <link rel="mask-icon" href="/img/logo/safari-pinned-tab.svg" color="#5bbad5">
+        <link rel="shortcut icon" href="/img/logo/favicon.ico">
+        <meta name="msapplication-TileColor" content="#ffc40d">
+        <meta name="msapplication-config" content="/img/logo/browserconfig.xml">
+        <meta name="theme-color" content="#ffffff">
         <!-- Site favicon icons -->
         <!--complete list of meta tags at - https://gist.github.com/lancejpollard/1978404 -->
     </head>
@@ -36,9 +46,26 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        
-        
+        <div class="nav-cont"></div>
 
-        <script defer="" src="/js/dist/jquery.js"></script>
+        <div class="_">
+          <div class="j">
+            <div class="col">
+              <h1>Dispatch X</h1>
+            </div>
+            <div class="col">
+
+            </div>
+          </div>
+        </div>
+        
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+        <script>
+          $(function() {
+            $('.nav-cont').load('/modules/navbar.html');
+          });
+        </script>
     
 </body></html>
