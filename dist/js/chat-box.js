@@ -1,11 +1,11 @@
-!function r(s,o,i){function a(t,e){if(!o[t]){if(!s[t]){var n="function"==typeof require&&require;if(!e&&n)return n(t,!0);if(u)return u(t,!0);throw(e=new Error("Cannot find module '"+t+"'")).code="MODULE_NOT_FOUND",e}n=o[t]={exports:{}},s[t][0].call(n.exports,function(e){return a(s[t][1][e]||e)},n,n.exports,r,s,o,i)}return o[t].exports}for(var u="function"==typeof require&&require,e=0;e<i.length;e++)a(i[e]);return a}({1:[function(e,t,n){let r=document.createElement("template");r.innerHTML=`
-<div class="nph">
+!function r(o,s,i){function u(t,e){if(!s[t]){if(!o[t]){var n="function"==typeof require&&require;if(!e&&n)return n(t,!0);if(a)return a(t,!0);throw(e=new Error("Cannot find module '"+t+"'")).code="MODULE_NOT_FOUND",e}n=s[t]={exports:{}},o[t][0].call(n.exports,function(e){return u(o[t][1][e]||e)},n,n.exports,r,o,s,i)}return s[t].exports}for(var a="function"==typeof require&&require,e=0;e<i.length;e++)u(i[e]);return u}({1:[function(e,t,n){let r=document.createElement("template");r.innerHTML=`
+<div  profile >
     <slot name="image"></slot>
 </div>
-<div class="npp">
-    <span class="npd"><slot name="username"></slot></span>
-    <div class="npv"><slot name="message"></slot></div>
+<div  message-box >
+    <span  user-name ><slot name="username"></slot></span>
+    <div  message ><slot name="message"></slot></div>
 </div>
             
-`;class s extends HTMLElement{static get observedAttributes(){return["username"]}get username(){return this.getAttribute("username")}constructor(){super(),this.attachShadow({mode:"open"}).appendChild(r.content.cloneNode(!0))}}customElements.define("chat-box",s)},{}]},{},[1]);
+`;class o extends HTMLElement{static get observedAttributes(){return["username"]}get username(){return this.getAttribute("username")}constructor(){super(),this.attachShadow({mode:"open"}).appendChild(r.content.cloneNode(!0))}}customElements.define("chat-box",o)},{}]},{},[1]);
 //# sourceMappingURL=chat-box.js.map

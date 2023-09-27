@@ -6,7 +6,7 @@
 @import "../../../node_modules/bootstrap/scss/functions";
 
 // Variable overrides second
-$primary: #900;
+$primary: #0070e0;
 $enable-shadows: true;
 $prefix: "d-";
 
@@ -31,6 +31,7 @@ $prefix: "d-";
 @import "../../../node_modules/bootstrap/scss/buttons";
 @import "../../../node_modules/bootstrap/scss/transitions";
 @import "../../../node_modules/bootstrap/scss/nav";
+@import "../../../node_modules/bootstrap/scss/mixins/breakpoints";
 
 body {
     padding: 0!important;
@@ -43,4 +44,27 @@ body {
     right: 0;
     font-family: 'Outfit', boilerplate.$font-sans-serif!important;
     background: transparent;
+    .container-fluid .collapse form.d-flex {
+        button.d-button {
+            width: 75%;
+        }
+        button.d-button-secondary {
+            width: 25%;
+        }
+    }
+    @include media-breakpoint-up(lg) {
+        .container-fluid .collapse form.d-flex {
+            button {
+                width: auto!important;
+            }
+        }
+    }
+    background: rgba(0,0,0,.03);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    z-index: 1;
+}
+.container-sm {
+    padding-top: 2em;
+    font-family: 'Outfit', boilerplate.$font-sans-serif!important;
 }

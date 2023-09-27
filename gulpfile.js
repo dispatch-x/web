@@ -62,7 +62,7 @@ gulp.task('js', function () {
 });
 
 gulp.task('remaining', gulp.series('css', 'js', function() {
-  return gulp.src(['!./assets/styles/scss/*.scss', '!./assets/js/*.js', './*.html', './tests/*.html'], {base: './'})
+  return gulp.src(['!./assets/styles/scss/*.scss', '!./assets/js/*.js', './*.html', './tests/*.html', './modules/*.html'], {base: './'})
     .pipe(rcs())
     .pipe(gulp.dest('./dist/'));
 }));
@@ -70,6 +70,7 @@ gulp.task('remaining', gulp.series('css', 'js', function() {
 gulp.task('fixpaths', gulp.series('remaining', function () {
   return gulp.src('dist/**/*.html')
     .pipe(plumber())
+    .pipe(replace('/dist/', '/'))
     .pipe(replace('/assets/styles/css', '/css'))
     .pipe(replace('/assets/js', '/js'))
     .pipe(replace('/assets/js/dist', '/js'))
