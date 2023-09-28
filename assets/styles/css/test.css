@@ -321,6 +321,11 @@ body {
   word-wrap: break-word;
 }
 
+a.d-button, a.d-button-secondary {
+  text-align: center;
+  text-decoration: none;
+}
+
 .d-button {
   padding: 10px;
   border-radius: 10px;
@@ -413,6 +418,14 @@ body {
 
 *[show] {
   display: initial;
+}
+
+video::-internal-media-controls-download-button {
+  display: none;
+}
+
+video::-webkit-media-controls-enclosure {
+  overflow: hidden;
 }
 
 chat-box {

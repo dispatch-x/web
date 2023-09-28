@@ -13,6 +13,10 @@
 @import "../../../node_modules/bootstrap/scss/toasts";
 
 // Button
+a.d-button, a.d-button-secondary {
+    text-align: center;
+    text-decoration: none;
+}
 .d-button {
     padding: 10px;
     border-radius: 10px;
@@ -107,4 +111,13 @@
 
 *[show] {
     display: initial;
+}
+
+// Video stuff
+video::-internal-media-controls-download-button {
+    display:none;
+}
+
+video::-webkit-media-controls-enclosure {
+    overflow:hidden;
 }

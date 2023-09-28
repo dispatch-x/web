@@ -33,6 +33,8 @@ $prefix: "d-";
 @import "../../../node_modules/bootstrap/scss/nav";
 @import "../../../node_modules/bootstrap/scss/mixins/breakpoints";
 
+$inset-shadow: inset 0 -1px 1px rgba(var(--bs-body-color-rgb), 0.15),0 0.25rem 1.5rem rgba(var(--bs-body-bg-rgb), 0.75);
+
 body {
     padding: 0!important;
 }
@@ -44,13 +46,11 @@ body {
     right: 0;
     font-family: 'Outfit', boilerplate.$font-sans-serif!important;
     background: transparent;
-    .container-fluid .collapse form.d-flex {
-        button.d-button {
-            width: 75%;
-        }
-        button.d-button-secondary {
-            width: 25%;
-        }
+    button.d-button {
+        width: 75%;
+    }
+    button.d-button-secondary {
+        width: 25%;
     }
     @include media-breakpoint-up(lg) {
         .container-fluid .collapse form.d-flex {
@@ -67,4 +67,79 @@ body {
 .container-sm {
     padding-top: 2em;
     font-family: 'Outfit', boilerplate.$font-sans-serif!important;
+}
+
+.new-f {
+    background-color: #FBAB7E;
+    box-shadow: $box-shadow-sm;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+    position: sticky;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    .new-feature {
+        width: auto;
+        box-shadow: $inset-shadow;
+        border-radius: 7px;
+        padding: 0.3rem;
+        background: $primary;
+        color: white;
+        font-weight: 600;
+    }
+    .new-f-desc {
+        text-align: center;
+    }
+    .new-f-demo {
+        box-shadow: $box-shadow-sm $inset-shadow;
+        border-radius: 1rem;
+        border: 1px solid $gray-500;
+        margin: .5rem;
+        width: 90%;
+        height: auto;
+    }
+    .demo-replay {
+        display: none;
+        user-select: none;
+        color: $link-color;
+        cursor: pointer;
+        transition: .2s;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    .f-close {
+        position: absolute;
+        top: .5rem;
+        right: .5rem;
+        background: 0;
+        border: 0;
+        transform: scale(1.5);
+        color: black;
+        cursor: pointer;
+    }
+}
+
+// h1
+.col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .row {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+.big-heading {
+    font-size: calc(1.525rem + 3.3vw);
+    text-align: center;
+    width: 100%;
 }

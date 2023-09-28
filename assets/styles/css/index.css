@@ -322,6 +322,11 @@ body {
   word-wrap: break-word;
 }
 
+a.d-button, a.d-button-secondary {
+  text-align: center;
+  text-decoration: none;
+}
+
 .d-button {
   padding: 10px;
   border-radius: 10px;
@@ -414,6 +419,14 @@ body {
 
 *[show] {
   display: initial;
+}
+
+video::-internal-media-controls-download-button {
+  display: none;
+}
+
+video::-webkit-media-controls-enclosure {
+  overflow: hidden;
 }
 
 :root,
@@ -9087,10 +9100,10 @@ body {
   backdrop-filter: blur(10px);
   z-index: 1;
 }
-.navbar .container-fluid .collapse form.d-flex button.d-button, .navbar .container-sm .collapse form.d-flex button.d-button, .navbar .container-md .collapse form.d-flex button.d-button, .navbar .container-lg .collapse form.d-flex button.d-button, .navbar .container-xl .collapse form.d-flex button.d-button, .navbar .container-xxl .collapse form.d-flex button.d-button {
+.navbar button.d-button {
   width: 75%;
 }
-.navbar .container-fluid .collapse form.d-flex button.d-button-secondary, .navbar .container-sm .collapse form.d-flex button.d-button-secondary, .navbar .container-md .collapse form.d-flex button.d-button-secondary, .navbar .container-lg .collapse form.d-flex button.d-button-secondary, .navbar .container-xl .collapse form.d-flex button.d-button-secondary, .navbar .container-xxl .collapse form.d-flex button.d-button-secondary {
+.navbar button.d-button-secondary {
   width: 25%;
 }
 @media (min-width: 992px) {
@@ -9102,6 +9115,81 @@ body {
 .container-sm {
   padding-top: 2em;
   font-family: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+}
+
+.new-f {
+  background-color: #FBAB7E;
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
+  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+  position: sticky;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  padding: 1rem 0;
+}
+.new-f .new-feature {
+  width: auto;
+  box-shadow: inset 0 -1px 1px rgba(var(--bs-body-color-rgb), 0.15), 0 0.25rem 1.5rem rgba(var(--bs-body-bg-rgb), 0.75);
+  border-radius: 7px;
+  padding: 0.3rem;
+  background: #0070e0;
+  color: white;
+  font-weight: 600;
+}
+.new-f .new-f-desc {
+  text-align: center;
+}
+.new-f .new-f-demo {
+  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) inset 0 -1px 1px rgba(var(--bs-body-color-rgb), 0.15), 0 0.25rem 1.5rem rgba(var(--bs-body-bg-rgb), 0.75);
+  border-radius: 1rem;
+  border: 1px solid #adb5bd;
+  margin: 0.5rem;
+  width: 90%;
+  height: auto;
+}
+.new-f .demo-replay {
+  display: none;
+  user-select: none;
+  color: #0070e0;
+  cursor: pointer;
+  transition: 0.2s;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+.new-f .demo-replay:hover {
+  text-decoration: underline;
+}
+.new-f .f-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: 0;
+  border: 0;
+  transform: scale(1.5);
+  color: black;
+  cursor: pointer;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.col .row {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.big-heading {
+  font-size: calc(1.525rem + 3.3vw);
+  text-align: center;
+  width: 100%;
 }
 
 /*# sourceMappingURL=index.css.map */

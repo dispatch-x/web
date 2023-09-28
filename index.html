@@ -34,7 +34,6 @@
         <meta name="twitter:creator" content="@uimaxbai" />
         <link rel="stylesheet" href="/assets/styles/css/index.css">
         <meta name="google-site-verification" content="" />
-
         <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/logo/apple-touch-icon.png">
         <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/logo/favicon-32x32.png">
         <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/logo/favicon-16x16.png">
@@ -53,17 +52,39 @@
         <![endif]-->
         <div class="nav-cont"></div>
 
+        <div class="new-f">
+          <button onclick="hideF()" class="f-close"><i class="fa-solid fa-xmark"></i></button>
+          <strong class="new-feature">
+            New in v0.1:
+          </strong>
+          <span class="new-f-desc">
+            A fresh start, new interface and better code
+          </span>
+          <video data-setup="{}" class="video-js new-f-demo" controlsList="nodownload" playsinline autoplay muted poster="/assets/img/templates/iphones.webp">
+            <source src="/assets/img/templates/iphones.webm" type="video/webm">
+          </video>
+          <span class="demo-replay icon-link">
+            <i class="fa-solid fa-rotate-right"></i>
+            Replay
+          </span>
+        </div>
         <div class="container-sm">
-          <div class="row">
-            <div class="col">
-              <h1>Dispatch X</h1>
+          <div class="col">
+            <div class="row">
+              <h1 class="big-heading mb-3 fw-semibold lh-1">The most <span class="h1-switch">customizable</span> chatting service out there</h1>
+              <p class="lead mb-4" style="color: var(--d-secondary-color); text-align: center;">
+                Whatever your style, rainbow unicorns, squared edges or the default look, express yourself with peace of mind, knowing that we do not collect any of your data.
+              </p>
+              <a href="#" class="d-button" style="width: 100%; font-size: x-large;">Sign up now</a>
+              <a target="_blank" href="https://github.com/GoneRogueProductions/dispatchx" class="d-button icon-link" style="width: 100%; background: black; border: 0; justify-content: center; margin-top: .5rem;"><i class="fa-brands fa-github"></i> View on Github</a>
             </div>
-            <div class="col">
+            <div class="row">
 
             </div>
           </div>
         </div>
         
+        <script src="/assets/js/fontawesome.js" defer></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
 
@@ -71,6 +92,25 @@
           $(function() {
             $('.nav-cont').load('/modules/navbar.html');
           });
+
+          function hideF() {
+            $('.new-f').animate({
+              marginTop: '-500px'
+            });
+            setTimeout(function(){$('.new-f').css('position','fixed');}, 200);
+          }
+
+          document.querySelector('.new-f-demo').addEventListener('ended',showReplay,false);
+          function showReplay() {
+            $('.demo-replay').show(200);
+          }
+          $('.demo-replay').on('click', function(){
+            curVid = document.querySelector('.new-f-demo');
+            curVid.pause();
+            curVid.currentTime = '0';
+            curVid.play();
+          });
+
         </script>
     </body>
 </html>
