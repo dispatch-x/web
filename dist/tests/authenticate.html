@@ -57,15 +57,15 @@
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-        <img class="npl" src="/img/backgrounds/bg-1.jpg">
-        <div class="npc">
-            <div class="npf">
-                <h1 class="npr">LOGO</h1>
+        <img class="npg" src="/img/backgrounds/bg-1.jpg">
+        <div class="npy">
+            <div class="npm">
+                <h1 class="npl">LOGO</h1>
                 
                 
                 
                 <form class="d" id="loginForm">
-                    <h1 class="npn">Sign in</h1>
+                    <h1 class="npf">Sign in</h1>
                     <div class="nlm">
                         <div class="nlg">@</div>
                         <div class="nlv">
@@ -81,16 +81,16 @@
                         </div>
                     </div>
     
-                    <input type="submit" id="loginButton" value="Sign in" class="h npi">
+                    <input type="submit" id="loginButton" value="Sign in" class="h npc">
                     <hr>
                     <div style="display: flex; justify-content: baseline;">
-                        <a class="v nps" onclick="showRegister()">No account? Register!</a>
+                        <a class="v nph" onclick="showRegister()">No account? Register!</a>
                     </div>
                     
                 </form>
     
                 <form class="d" id="regForm" style="display: none;">
-                    <h1 class="npn">Register</h1>
+                    <h1 class="npf">Register</h1>
                     <div class="nlm">
                         <div class="nlg">@</div>
                         <div class="nlv">
@@ -119,18 +119,18 @@
                         </div>
                     </div>
     
-                    <div class="nlo npo">
+                    <div class="nlo npp">
                         <input style="width: auto;" requiredclass="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                         <label class="nlf" for="flexCheckDefault">
                         I agree to the <a href="#">terms and conditions</a>
                         </label>
-                        <label style="padding-left: 2px; display: none;" for="flexCheckDefault" id="checkBoxErr" class="npa">Please check this box.</label>
+                        <label style="padding-left: 2px; display: none;" for="flexCheckDefault" id="checkBoxErr" class="npv">Please check this box.</label>
                     </div>
     
-                    <input type="submit" id="registerButton" value="Register" class="h npi">
+                    <input type="submit" id="registerButton" value="Register" class="h npc">
                     <hr>
                     <div style="display: flex; justify-content: baseline;">
-                        <a class="v nps" onclick="showLogin()">Have an account? Login!</a>
+                        <a class="v nph" onclick="showLogin()">Have an account? Login!</a>
                     </div>
                 </form>
             </div>
@@ -151,9 +151,9 @@
                 }
 
                 var isDisabled = false;
-                if (document.querySelector(".npu") != null) {
+                if (document.querySelector(".npd") != null) {
                     
-                    for (const ele of document.querySelectorAll(".npu")) {
+                    for (const ele of document.querySelectorAll(".npd")) {
                         if (ele.style.display !== "none") {
                             $("#registerButton").prop("nc_", true);
                             isDisabled = true;
