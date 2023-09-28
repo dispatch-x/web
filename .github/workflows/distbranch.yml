@@ -53,6 +53,7 @@ jobs:
         mkdir dist
         mkdir dist/img
         cp -r assets/img dist
+        cp ./site.webmanifest dist/site.webmanifest
 
     - name: Use Node.js
       uses: actions/setup-node@main
