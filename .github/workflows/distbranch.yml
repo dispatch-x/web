@@ -53,6 +53,7 @@ jobs:
         mkdir dist
         mkdir dist/img
         cp -r assets/img dist
+        cp ./site.webmanifest dist/site.webmanifest
 
     - name: Use Node.js
       uses: actions/setup-node@main
@@ -89,7 +90,7 @@ jobs:
         uses: actions/upload-pages-artifact@v2
         with:
           # Upload entire repository
-          retention-days: 0
+          retention-days: 1
           path: 'dist'
       - name: Deploy to GitHub Pages
         id: deployment
