@@ -71,6 +71,7 @@ gulp.task('fixpaths', gulp.series('remaining', function () {
   return gulp.src('dist/**/*.html')
     .pipe(plumber())
     .pipe(replace('/dist/', '/'))
+    .pipe(replace('.html', ''))
     .pipe(replace('/assets/styles/css', '/css'))
     .pipe(replace('/assets/js', '/js'))
     .pipe(replace('/assets/js/dist', '/js'))

@@ -19,7 +19,9 @@
     text-align: center;
 }
 .logo {
-    text-align: center;
+    height: 75px;
+    width: auto!important;
+    margin-bottom: 0.5rem;
 }
 
 .input-group {
@@ -97,10 +99,12 @@ label.error {
 .login-wrapper {
     height: 100%;
     width: 100%;
-    max-width: 500px;
-    max-height: 560px;
     overflow: auto;
     background: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
 .background {
     display: none;
@@ -133,6 +137,9 @@ label.error {
         border: 2px solid #dee2e6;
         border-radius: 1em 0 0 1em;
         box-shadow: 0 1rem 6rem 20px rgba(0, 0, 0, 0.175);
+        max-width: 500px;
+        max-height: 560px;
+        justify-content: flex-start;
     }
     .background {
         display: block;
