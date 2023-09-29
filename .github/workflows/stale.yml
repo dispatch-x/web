@@ -20,8 +20,9 @@ jobs:
     steps:
     - uses: actions/stale@v5
       with:
+        days-before-stale: 21
         repo-token: ${{ secrets.GITHUB_TOKEN }}
         stale-issue-message: 'Stale issue message'
         stale-pr-message: 'Stale pull request message'
-        stale-issue-label: 'no-issue-activity'
-        stale-pr-label: 'no-pr-activity'
+        stale-issue-label: 'stale'
+        stale-pr-label: 'stale'
