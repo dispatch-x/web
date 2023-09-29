@@ -11,6 +11,8 @@ View more on the wiki.
 
 (p.s i am now committing with messages that are actually kind of useful. if you want to join me then please do)
 
+(maybe not always though, i do have this precious thing called *TIME*)
+
 *Please note that this project is very much a work in progress. Tread with caution.*
 
 ### What is this?
