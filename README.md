@@ -1,44 +1,38 @@
+# create-svelte
 
-# dispatchx
+Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
-## Overview
+## Creating a project
 
-View more on the wiki.
+If you're seeing this, you've probably already done this step. Congrats!
 
---> **Happy Bug Fixing Week! (last week of every month)**
+```bash
+# create a new project in the current directory
+npm create svelte@latest
 
-
-
-(p.s i am now committing with messages that are actually kind of useful. if you want to join me then please do)
-
-*Please note that this project is very much a work in progress. Tread with caution.*
-
-### What is this?
-
-#### I thought you'd already done Dispatch!
-
-Yes, but the code was as we called it, self-obfuscating. It did not have proper distinction between backend and frontend. So `dispatchx` is round 2, where we separate the tech stack, and follow standards (eg. OpenAPI). Just a fun practice at coding, not intended to be a polished project :)
-
-### How to use
-
-Git clone this repository:
-
-```shell
-git clone https://github.com/GoneRogueProductions/dispatchx
+# create a new project in my-app
+npm create svelte@latest my-app
 ```
 
-Install packages:
+## Developing
 
-```shell
-npm install
+Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+
+```bash
+npm run dev
+
+# or start the server and open the app in a new browser tab
+npm run dev -- --open
 ```
 
-If you want to get rid of the pesky security vulnerabilities, run this:
+## Building
 
-```shell
-npx npm-force-resolutions
+To create a production version of your app:
+
+```bash
+npm run build
 ```
 
-### Developer notes
+You can preview the production build with `npm run preview`.
 
-In prod, you should use the `build-css` script. Only use the `build-sass-watch` script in dev.
+> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
