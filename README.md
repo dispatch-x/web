@@ -1,6 +1,12 @@
 
 # dispatchx
 
+<!--**LAUNCHING ON 1/11/23**
+-->
+
+[screen sizes](https://screensizes.idea.org.uk)
+
+
 ## Overview
 
 View more on the wiki.
@@ -11,7 +17,9 @@ View more on the wiki.
 
 (p.s i am now committing with messages that are actually kind of useful. if you want to join me then please do)
 
-*Please note that this project is very much a work in progress. Tread with caution.*
+(maybe not always though, i do have this precious thing called *TIME*)
+
+<img src="https://github.com/GoneRogueProductions/dispatchx/assets/106704354/ac3146b4-a121-4fcc-a286-ef55efd074a7" alt="Girl in a jacket" width="100" height="100"> *Please note that this project is very much a work in progress. Tread with caution.*
 
 ### What is this?
 
