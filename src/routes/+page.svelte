@@ -46,31 +46,34 @@
   
 
   <script>
-    import Fa from 'svelte-fa'
-    import { faFlag } from '@fortawesome/free-solid-svg-icons'
-    import { onMount } from 'svelte';
-    const jq = window.$;
+    import jQuery from 'jquery';
+    import { JSDOM } from 'jsdom';
 
-    $(function() {
-      $('.nav-cont').load('/modules/navbar.html');
-    });
+
 
     function hideF() {
-      $('.new-f').animate({
+      jQuery('.new-f').animate({
         marginTop: '-500px'
       });
-      setTimeout(function(){$('.new-f').css('position','fixed');}, 200);
+      setTimeout(function(){jQuery('.new-f').css('position','fixed');}, 200);
     }
 
     document.querySelector('.new-f-demo').addEventListener('ended',showReplay,false);
     function showReplay() {
-      $('.demo-replay').show(200);
+      jQuery('.demo-replay').show(200);
     }
-    $('.demo-replay').on('click', function(){
+    let curVid;
+    jQuery('.demo-replay').on('click', () => {
       curVid = document.querySelector('.new-f-demo');
-      curVid.pause();
-      curVid.currentTime = '0';
-      curVid.play();
+      if (curVid === null) {
+
+      }
+      else {
+        curVid.pause();
+        curVid.currentTime = '0';
+        curVid.play();
+      }
+      
     });
 
 
@@ -110,7 +113,7 @@
               char = this.randomChar()
               this.queue[i].char = char
             }
-            output += `<span class="dud">${char}</span>`
+            output += `<span class="dud">jQuery{char}</span>`
           } else {
             output += from
           }
@@ -128,7 +131,7 @@
       }
     }
 
-    $('.encryption-replay').on('click', replayEffect);
+    jQuery('.encryption-replay').on('click', replayEffect);
 
     const phrases = [
       'End to end encryption',
@@ -146,7 +149,7 @@
         if (el.innerText == phrases[phrases.length - 1]) {
           fx.setText(phrases[0]).then(() => {
             counter = 1;
-            $('.encryption-replay').show(200);
+            jQuery('.encryption-replay').show(200);
           })
         }
         else {
