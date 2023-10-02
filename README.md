@@ -1,38 +1,56 @@
-# create-svelte
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+# dispatchx
 
-## Creating a project
+### THIS IS A NON-WORKING, SVELTEKIT VERSION OF DISPATCH.
 
-If you're seeing this, you've probably already done this step. Congrats!
+You can visit it here: [Link](https://skit.dispatch.eu.org)
 
-```bash
-# create a new project in the current directory
-npm create svelte@latest
+<!--**LAUNCHING ON 1/11/23**
+-->
 
-# create a new project in my-app
-npm create svelte@latest my-app
+[screen sizes](https://screensizes.idea.org.uk)
+
+
+## Overview
+
+View more on the wiki.
+
+--> **Happy Bug Fixing Week! (last week of every month)**
+
+
+
+(p.s i am now committing with messages that are actually kind of useful. if you want to join me then please do)
+
+(maybe not always though, i do have this precious thing called *TIME*)
+
+<img src="https://github.com/GoneRogueProductions/dispatchx/assets/106704354/ac3146b4-a121-4fcc-a286-ef55efd074a7" alt="Girl in a jacket" width="100" height="100"> *Please note that this project is very much a work in progress. Tread with caution.*
+
+### What is this?
+
+#### I thought you'd already done Dispatch!
+
+Yes, but the code was as we called it, self-obfuscating. It did not have proper distinction between backend and frontend. So `dispatchx` is round 2, where we separate the tech stack, and follow standards (eg. OpenAPI). Just a fun practice at coding, not intended to be a polished project :)
+
+### How to use
+
+Git clone this repository:
+
+```shell
+git clone https://github.com/GoneRogueProductions/dispatchx
 ```
 
-## Developing
+Install packages:
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
-
-```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+```shell
+npm install
 ```
 
-## Building
+If you want to get rid of the pesky security vulnerabilities, run this:
 
-To create a production version of your app:
-
-```bash
-npm run build
+```shell
+npx npm-force-resolutions
 ```
 
-You can preview the production build with `npm run preview`.
+### Developer notes
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+In prod, you should use the `build-css` script. Only use the `build-sass-watch` script in dev.
