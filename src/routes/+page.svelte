@@ -48,7 +48,7 @@
   <script>
     import Fa from 'svelte-fa'
     import { faFlag } from '@fortawesome/free-solid-svg-icons'
-    import { onMount } form 'svelte';
+    import { onMount } from 'svelte';
     const jq = window.$;
 
     $(function() {
