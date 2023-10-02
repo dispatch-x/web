@@ -1,180 +1,151 @@
-<style>
-  @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap");
-  .demoHidden {
-    margin-top: -500px;
-    position: fixed;
-  }
-  
-* {
-  font-family: Outfit!important;
-}
+<style lang="scss">
+@use 'main';
+@use 'boilerplate';
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
 
-html {
-  font-family: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-}
+// Functions first
+@import "../../node_modules/bootstrap/scss/functions";
 
-html, body {
-  height: 100%;
-  width: 100%;
-  padding: 0;
-  margin: 0;
-}
+// Variable overrides second
+$primary: #0070e0;
+$enable-shadows: true;
+$prefix: "d-";
+
+// Required Bootstrap imports
+@import "../../node_modules/bootstrap/scss/variables";
+@import "../../node_modules/bootstrap/scss/variables-dark";
+@import "../../node_modules/bootstrap/scss/maps";
+@import "../../node_modules/bootstrap/scss/mixins";
+@import "../../node_modules/bootstrap/scss/root";
+
+// Optional components
+@import "../../node_modules/bootstrap/scss/utilities";
+@import "../../node_modules/bootstrap/scss/reboot";
+@import "../../node_modules/bootstrap/scss/containers";
+@import "../../node_modules/bootstrap/scss/grid";
+@import "../../node_modules/bootstrap/scss/helpers";
+@import "../../node_modules/bootstrap/scss/utilities/api";
+
+@import "../../node_modules/bootstrap/scss/forms";
+@import "../../node_modules/bootstrap/scss/navbar";
+@import "../../node_modules/bootstrap/scss/containers";
+@import "../../node_modules/bootstrap/scss/buttons";
+@import "../../node_modules/bootstrap/scss/transitions";
+@import "../../node_modules/bootstrap/scss/nav";
+@import "../../node_modules/bootstrap/scss/mixins/breakpoints";
+
+$inset-shadow: inset 0 -1px 1px rgba(var(--bs-body-color-rgb), 0.15),0 0.25rem 1.5rem rgba(var(--bs-body-bg-rgb), 0.75);
 
 body {
-  padding: 0 !important;
+    padding: 0!important;
 }
 
+
 .container-sm {
-  padding-top: 2em;
-  font-family: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !important;
+    padding-top: 2em;
+    font-family: 'Outfit', boilerplate.$font-sans-serif!important;
 }
 
 .new-f {
-  background-color: #FBAB7E;
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-  background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
-  position: sticky;
-  align-items: center;
-  justify-content: center;
-  display: flex;
-  flex-direction: column;
-  padding: 1rem 0;
-}
-.new-f .new-feature {
-  width: auto;
-  box-shadow: inset 0 -1px 1px rgba(var(--bs-body-color-rgb), 0.15), 0 0.25rem 1.5rem rgba(var(--bs-body-bg-rgb), 0.75);
-  border-radius: 7px;
-  padding: 0.3rem;
-  background: #0070e0;
-  color: white;
-  font-weight: 600;
-}
-.new-f .new-f-desc {
-  text-align: center;
-}
-.new-f .new-f-demo {
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) inset 0 -1px 1px rgba(var(--bs-body-color-rgb), 0.15), 0 0.25rem 1.5rem rgba(var(--bs-body-bg-rgb), 0.75);
-  border-radius: 1rem;
-  border: 1px solid #adb5bd;
-  margin: 0.5rem;
-  width: 90%;
-  height: auto;
-}
-.new-f .demo-replay {
-  display: none;
-  user-select: none;
-  color: #0070e0;
-  cursor: pointer;
-  transition: 0.2s;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-.new-f .demo-replay:hover {
-  text-decoration: underline;
-}
-.new-f .f-close {
-  position: absolute;
-  top: 0.5rem;
-  right: 0.5rem;
-  background: 0;
-  border: 0;
-  transform: scale(1.5);
-  color: black;
-  cursor: pointer;
+    background-color: #FBAB7E;
+    box-shadow: $box-shadow-sm;
+    background-image: linear-gradient(62deg, #FBAB7E 0%, #F7CE68 100%);
+    position: sticky;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    padding: 1rem 0;
+    .new-feature {
+        width: auto;
+        box-shadow: $inset-shadow;
+        border-radius: 7px;
+        padding: 0.3rem;
+        background: $primary;
+        color: white;
+        font-weight: 600;
+    }
+    .new-f-desc {
+        text-align: center;
+    }
+    .new-f-demo {
+        box-shadow: $box-shadow-sm $inset-shadow;
+        border-radius: 1rem;
+        border: 1px solid $gray-500;
+        margin: .5rem;
+        width: 90%;
+        height: auto;
+    }
+    .demo-replay {
+        display: none;
+        user-select: none;
+        color: $link-color;
+        cursor: pointer;
+        transition: .2s;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+    .f-close {
+        position: absolute;
+        top: .5rem;
+        right: .5rem;
+        background: 0;
+        border: 0;
+        transform: scale(1.5);
+        color: black;
+        cursor: pointer;
+    }
 }
 
+// h1
 h1, h2, h3, h4, p, span {
-  text-align: center;
+    text-align: center;
 }
-
 main {
-  padding-bottom: 75px;
-  overflow: auto;
-  text-align: center;
+    padding-bottom: 75px;
+    overflow: auto;
+    text-align: center;
 }
-
 .col {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .row {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
-.col .row {
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
 .big-heading {
-  font-size: calc(1.525rem + 3.3vw);
-  text-align: center;
-  width: 100%;
+    font-size: calc(1.525rem + 3.3vw);
+    text-align: center;
+    width: 100%;
 }
-a.d-button, a.d-button-secondary {
-  text-align: center;
-  text-decoration: none;
-}
-
-.d-button {
-  padding: 10px;
-  border-radius: 10px;
-  border: 1px solid #0070e0;
-  background: #007FFF;
-  color: white;
-  font-family: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  cursor: pointer;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  transition: 0.2s;
-  font-weight: 200;
-}
-.d-button:hover {
-  background: #0079f1;
-}
-.d-button:active {
-  box-shadow: none;
-  background: #0070e0;
-}
-
-.d-button-secondary {
-  padding: 10px;
-  border-radius: 10px;
-  border: 2px solid #007FFF;
-  color: black;
-  background: white;
-  font-family: "Outfit", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-  cursor: pointer;
-  box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
-  transition: 0.2s;
-  font-weight: 200;
-}
-.d-button-secondary:hover {
-  background: #f8f9fa;
-}
-.d-button-secondary:active {
-  box-shadow: none;
-}
-
 .encryption-replay {
-  display: none;
-  user-select: none;
-  color: #0070e0;
-  cursor: pointer;
-  transition: 0.2s;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
-.encryption-replay:hover {
-  text-decoration: underline;
+    display: none;
+    user-select: none;
+    color: $link-color;
+    cursor: pointer;
+    transition: .2s;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    &:hover {
+        text-decoration: underline;
+    }
 }
 
 
 </style>
 
-<script>
+<script lang="ts">
   import Navbar from "./Navbar.svelte";
   import { onMount } from 'svelte';
 
@@ -239,7 +210,7 @@ a.d-button, a.d-button-secondary {
             char = this.randomChar()
             this.queue[i].char = char
           }
-          output += `!<-_\\/`
+          output += `<span class="dud">${char}</span>`
         } else {
           output += from
         }
@@ -302,23 +273,25 @@ a.d-button, a.d-button-secondary {
 
 <Navbar />
 
-<main>
-    <div class:demoHidden="{current === 1}" class="new-f">
-      <button on:click="{hideF}" class="f-close"><i class="fa-solid fa-xmark"></i></button>
-      <strong class="new-feature">
-        New in Dispatch:
-      </strong>
-      <span class="new-f-desc">
-        <strong>v0.1</strong> A fresh start, new interface and better code
-      </span>
-      <video on:ended="{showReplay}" bind:this="{newFDemo}" class="new-f-demo" controlsList="nodownload" playsinline autoplay muted poster="/iphones.webp">
-        <source src="/iphones.webm" type="video/webm">
-      </video>
-      <span aria="" bind:this="{demoReplay}" on:click="{demoClicked}" class="demo-replay icon-link">
-        <i class="fa-solid fa-rotate-right"></i>
-        Replay
-      </span>
-    </div>
+<div class:demoHidden="{current === 1}" class="new-f">
+  <button on:click="{hideF}" class="f-close"><i class="fa-solid fa-xmark"></i></button>
+  <strong class="new-feature">
+    New in Dispatch:
+  </strong>
+  <span class="new-f-desc">
+    <strong>v0.1</strong> A fresh start, new interface and better code
+  </span>
+  <video on:ended="{showReplay}" bind:this="{newFDemo}" class="new-f-demo" controlsList="nodownload" playsinline autoplay muted poster="/iphones.webp">
+    <source src="/iphones.webm" type="video/webm">
+  </video>
+  <span tabindex="0" role="button" bind:this="{demoReplay}" on:click="{demoClicked}" class="demo-replay icon-link">
+    <i class="fa-solid fa-rotate-right"></i>
+    Replay
+  </span>
+</div>
+
+<main style="position: relative; top: 0;">
+    
     <div class="container-sm">
       <div class="col">
         <div class="row">
@@ -333,7 +306,7 @@ a.d-button, a.d-button-secondary {
           <hr style="margin-top: 1rem;">
           <h3>Still not convinced?</h3>
           <h1><code style="font-family: var(--bs-font-monospace)!important;" class="encryption mb-3 fw-semibold lh-1 text-center text-black">End to end encryption</code></h1>
-          <span class="encryption-replay icon-link">
+          <span tabindex="0" on:click="{replayEffect}" role="button" class="encryption-replay icon-link">
             <i class="fa-solid fa-rotate-right"></i>
             Replay
           </span>

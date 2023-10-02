@@ -1,0 +1,17 @@
+$font-sans-serif: system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans","Liberation Sans",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+
+html {
+    font-family: 'Outfit', $font-sans-serif;
+}
+html, body {
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+}
+body {
+    padding: 2em;
+}
+*, *::before, *::after {
+    box-sizing: border-box;
+}
