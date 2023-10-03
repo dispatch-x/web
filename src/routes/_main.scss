@@ -1,29 +1,11 @@
-@use 'boilerplate';
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
-
-@import '../../node_modules/bootstrap/scss/mixins';
-@import '../../node_modules/bootstrap/scss/functions';
-@import '../../node_modules/bootstrap/scss/variables';
-@import '../../node_modules/bootstrap/scss/variables-dark';
-@import '../../node_modules/bootstrap/scss/maps';
-@import '../../node_modules/bootstrap/scss/utilities';
-@import '../../node_modules/bootstrap/scss/root';
-
-@import "../../node_modules/bootstrap/scss/progress";
-@import "../../node_modules/bootstrap/scss/toasts";
-@import "../../node_modules/bootstrap/scss/forms";
-@import "../../node_modules/bootstrap/scss/navbar";
-@import "../../node_modules/bootstrap/scss/containers";
-@import "../../node_modules/bootstrap/scss/buttons";
-@import "../../node_modules/bootstrap/scss/transitions";
-@import "../../node_modules/bootstrap/scss/nav";
+@import 'boilerplate';
 
 .navbar {
     position: fixed;
     bottom: 0;
     left: 0;
     right: 0;
-    font-family: 'Outfit', boilerplate.$font-sans-serif!important;
+    font-family: 'Outfit', $font-sans-serif!important;
     background: transparent;
     button.d-button {
         width: 75%;
@@ -55,7 +37,7 @@ a.d-button, a.d-button-secondary {
     border: 1px solid #0070e0;
     background: #007FFF;
     color: white;
-    font-family: 'Outfit', boilerplate.$font-sans-serif;
+    font-family: 'Outfit', $font-sans-serif;
     cursor: pointer;
     box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
     transition: 0.2s;
@@ -74,7 +56,7 @@ a.d-button, a.d-button-secondary {
     border: 2px solid #007FFF;
     color: black;
     background: white;
-    font-family: 'Outfit', boilerplate.$font-sans-serif;
+    font-family: 'Outfit', $font-sans-serif;
     cursor: pointer;
     box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
     transition: 0.2s;

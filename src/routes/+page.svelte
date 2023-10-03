@@ -1,38 +1,6 @@
 <style lang="scss">
-@use 'main';
-@use 'boilerplate';
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap');
+@import 'main';
 
-// Functions first
-@import "../../node_modules/bootstrap/scss/functions";
-
-// Variable overrides second
-$primary: #0070e0;
-$enable-shadows: true;
-$prefix: "d-";
-
-// Required Bootstrap imports
-@import "../../node_modules/bootstrap/scss/variables";
-@import "../../node_modules/bootstrap/scss/variables-dark";
-@import "../../node_modules/bootstrap/scss/maps";
-@import "../../node_modules/bootstrap/scss/mixins";
-@import "../../node_modules/bootstrap/scss/root";
-
-// Optional components
-@import "../../node_modules/bootstrap/scss/utilities";
-@import "../../node_modules/bootstrap/scss/reboot";
-@import "../../node_modules/bootstrap/scss/containers";
-@import "../../node_modules/bootstrap/scss/grid";
-@import "../../node_modules/bootstrap/scss/helpers";
-@import "../../node_modules/bootstrap/scss/utilities/api";
-
-@import "../../node_modules/bootstrap/scss/forms";
-@import "../../node_modules/bootstrap/scss/navbar";
-@import "../../node_modules/bootstrap/scss/containers";
-@import "../../node_modules/bootstrap/scss/buttons";
-@import "../../node_modules/bootstrap/scss/transitions";
-@import "../../node_modules/bootstrap/scss/nav";
-@import "../../node_modules/bootstrap/scss/mixins/breakpoints";
 
 $inset-shadow: inset 0 -1px 1px rgba(var(--bs-body-color-rgb), 0.15),0 0.25rem 1.5rem rgba(var(--bs-body-bg-rgb), 0.75);
 
@@ -43,7 +11,7 @@ body {
 
 .container-sm {
     padding-top: 2em;
-    font-family: 'Outfit', boilerplate.$font-sans-serif!important;
+    font-family: 'Outfit', $font-sans-serif!important;
 }
 
 .new-f {
@@ -141,7 +109,6 @@ main {
         text-decoration: underline;
     }
 }
-
 
 </style>
 
@@ -288,7 +255,7 @@ main {
     <i class="fa-solid fa-rotate-right"></i>
     Replay
   </span>
-</div>
+</div>get r
 
 <main style="position: relative; top: 0;">
     
