@@ -12,6 +12,11 @@ declare global {
 		// interface PageData {}
 		// interface Platform {}
 	}
+
+	interface Window {
+		$: any,
+		jq: any
+	}
 }
 
 export {};

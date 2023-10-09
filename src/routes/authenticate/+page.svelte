@@ -1,7 +1,194 @@
-<img class="background" src="/assets/img/backgrounds/bg-1.jpg">
+<style lang="scss">
+    @import '../main';
+
+    @import '../../../node_modules/bootstrap/scss/mixins';
+    @import '../../../node_modules/bootstrap/scss/functions';
+    @import '../../../node_modules/bootstrap/scss/variables';
+    @import '../../../node_modules/bootstrap/scss/variables-dark';
+    @import '../../../node_modules/bootstrap/scss/maps';
+    @import '../../../node_modules/bootstrap/scss/utilities';
+    @import '../../../node_modules/bootstrap/scss/root';
+
+    @import "../../../node_modules/bootstrap/scss/progress";
+    @import "../../../node_modules/bootstrap/scss/toasts";
+
+    @import "../../../node_modules/bootstrap/scss/forms";
+
+    * {
+        font-family: 'Outfit', $font-sans-serif!important;
+    }
+
+    .login-heading {
+        margin-top: 0;
+        text-align: center;
+    }
+    .logo {
+        height: 75px;
+        width: auto!important;
+        margin-bottom: 0.5rem;
+    }
+
+    .input-group {
+        display: flex;
+        flex-direction: row;
+        box-shadow: $box-shadow-sm;
+        .input-group-text {
+            width: auto;
+            border: 0;
+            background: white;
+            border-bottom: 2px solid #dee2e6;
+        }
+        input {
+            outline: none;
+            font-family: 'Outfit', $font-sans-serif!important;
+            border: 0;
+            border-bottom: 2px solid #dee2e6;
+        }
+    }
+    .v-stack {
+        gap: 2em;
+    }
+    .login-button {
+        font-size: 1.5em;
+    }
+    .login-button[disabled] {
+        background: $gray-600;
+        border: 1px solid $gray-700;
+        cursor: not-allowed;
+        &:hover {
+            background: $gray-600;
+            border: 1px solid $gray-700;
+            box-shadow: 0;
+        }
+    }
+    .register-prompt {
+        margin-top: -1em;
+        display: initial;
+        font-size: 17px;
+        width: auto!important;
+        text-align: left;
+        left: 0;
+        position: relative;
+    }
+    .check-box {
+        $check-box-margin: -5px;
+        margin-top: $check-box-margin;
+        margin-bottom: -15px;
+        padding-left: 0;
+    }
+
+    input.error {
+        border-bottom: 2px solid $red;
+    }
+    label.error {
+        color: $red!important;
+        margin-top: 52px;
+        padding-left: 0;
+        background: transparent;
+        border: 0;
+        z-index: -1;
+        transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+    }
+    .error1 {
+        color: $red;
+        padding-left: 0;
+        padding-top: 5px;
+        margin-left: -5px;
+        background: transparent;
+        border: 0;
+        z-index: -1;
+        transform: scale(0.85) translateY(-0.5rem) translateX(0.15rem);
+    }
+
+    .login-wrapper {
+        height: 100%;
+        width: 100%;
+        overflow: auto;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .background {
+        display: none;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: -2;
+        object-fit: cover;
+    }
+
+
+    // Desktop time
+    @include media-breakpoint-up(sm) {
+        .login-wrapper-wrapper {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+            & * {
+                width: 100%;
+            }
+        }
+        .login-wrapper {
+            padding: 25px;
+            border: 2px solid #dee2e6;
+            border-radius: 1em 0 0 1em;
+            box-shadow: 0 1rem 6rem 20px rgba(0, 0, 0, 0.175);
+            max-width: 500px;
+            max-height: 575px;
+            justify-content: flex-start;
+        }
+        h1 {
+            font-weight: 500;
+        }
+        .background {
+            display: block;
+        }
+        body {
+            padding: 0;
+        }
+        
+    }
+
+    @include media-breakpoint-up(lg) {
+        .login-wrapper {
+            padding: 25px;
+            margin-left: 10%;
+            & * {
+                width: 100%;
+            }
+            border: 2px solid #dee2e6;
+            border-radius: 1em 0 0 1em;
+        }
+
+        .login-wrapper-wrapper {
+            display: flex;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            justify-content: center;
+            align-items: baseline;
+            flex-direction: column;
+            & * {
+                width: 100%;
+            }
+        }
+    }
+</style>
+
+<img class="background" src="/backgrounds/bg-1.jpg">
         <div class="login-wrapper-wrapper">
             <div class="login-wrapper">
-                <img class="logo" src="/assets/img/logo/android-chrome-192x192.png">
+                <img class="logo" src="/icons/android-chrome-192x192.png">
                 
                 
                 
@@ -84,14 +271,15 @@
 
         <script defer lang="ts">
             import { onMount } from 'svelte';
-            const jq = window.$;
+            import jQuery from 'jquery';
+            import { page } from '$app/stores';
 
         
             function hasProblems() {
-                if (jq('#flexCheckDefault').is(':checked')) {
-                    jq("#checkBoxErr").css("display", "none");
+                if (jQuery('#flexCheckDefault').is(':checked')) {
+                    jQuery("#checkBoxErr").css("display", "none");
                 } else {
-                    jq("#checkBoxErr").css("display", "block");
+                    jQuery("#checkBoxErr").css("display", "block");
                 }
 
                 var isDisabled = false;
@@ -99,21 +287,21 @@
                     
                     for (const ele of document.querySelectorAll(".error")) {
                         if (ele.style.display !== "none") {
-                            jq("#registerButton").prop("disabled", true);
+                            jQuery("#registerButton").prop("disabled", true);
                             isDisabled = true;
                             break;
                         }
                     }
                 }
-                else if (jq('#flexCheckDefault').is(':checked') == false) {
+                else if (jQuery('#flexCheckDefault').is(':checked') == false) {
                     isDisabled = true;
                 }
 
                 if (isDisabled == false) {
-                    jq("#registerButton").prop("disabled", false);
+                    jQuery("#registerButton").prop("disabled", false);
                 }
                 else if (isDisabled == true) {
-                    jq("#registerButton").prop("disabled", true);
+                    jQuery("#registerButton").prop("disabled", true);
                 }
             }
 
@@ -122,44 +310,48 @@
             
 
             function showLogin() {
-                jq("#loginForm").show();
-                jq("#regForm").hide();
+                jQuery("#loginForm").show();
+                jQuery("#regForm").hide();
             }
 
             function showRegister() {
-                jq("#loginForm").hide();
-                jq("#regForm").show();
+                jQuery("#loginForm").hide();
+                jQuery("#regForm").show();
             }
 
             
 
             // Do not refresh on submit, to use AJAX to send request
+            export async function load({ params, url }) {
+                let state = url.searchParams.get('state');
+                return { state };
+            }
+            
             
 
-            const urlParams = new URLSearchParams(window.location.search);
-            const register = urlParams.get('state');
+            const register = $page.data.state;
 
             onMount(() => {
-                jq('#regForm input').on("keyup", function() {
+                jQuery('#regForm input').on("keyup", function() {
                     hasProblems();
                 });
                 setInterval(hasProblems, 500);
-                jq("loginForm").submit(function(){
-                    var username = jq('#logInput').text();
-                    var password = jq('#passwInput').text();
-                    jq.ajax('/api/v1/login.php', {
+                jQuery("loginForm").submit(function(){
+                    var username = jQuery('#logInput').text();
+                    var password = jQuery('#passwInput').text();
+                    jQuery.ajax('/api/v1/login.php', {
                         type: 'POST',  // http method
                         data: { username: username, password: password },  // TODO: encrypt pass
                         success: function (data, status, xhr) {
                             // TODO: fill in
                         },
-                        error: function (jqXhr, textStatus, errorMessage) {
+                        error: function (jQueryXhr, textStatus, errorMessage) {
                             // TODO: fill in
                         }
                     });
                 });
-                jq(function(){
-                    jq("#regForm").validate({
+                jQuery(function(){
+                    jQuery("#regForm").validate({
                         rules: {
                             password1: {
                                 equalTo: "#passInput"
@@ -172,7 +364,7 @@
                     hasProblems();
                 });
                 if (register == 'reg') showRegister();
-                jq(".login-form").submit(function(e) {
+                jQuery(".login-form").submit(function(e) {
                     e.preventDefault();
                 });
 

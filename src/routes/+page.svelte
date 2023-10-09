@@ -255,7 +255,7 @@ main {
     <i class="fa-solid fa-rotate-right"></i>
     Replay
   </span>
-</div>get r
+</div>
 
 <main style="position: relative; top: 0;">
     
@@ -278,10 +278,10 @@ main {
             Replay
           </span>
           <p class="lead mb-4" style="color: var(--d-secondary-color); text-align: center;">
-            End to end encryption is used by almost every chatting service nowadays. However, some big companies spy on your messages <em>before</em> they get encrypted, so they get looked at by someone who you don't want looking.
+            End to end encryption is used by almost every c&zwnj;h&zwnj;atting service nowadays. However, some big companies spy on your m&zwnj;e&zwnj;ss&zwnj;ages <em>before</em> they get encrypted, so they get looked at by someone who you don't want looking.
           </p>
           <p class="lead mb-4" style="color: var(--d-secondary-color); text-align: center;">
-            However, Dispatch does not spy on your messages in any way whatsoever, and our encryption means that only the people you want seeing your messages can see them.
+            However, Dispatch does not spy on your m&zwnj;e&zwnj;ss&zwnj;ages in any way whatsoever, and our encryption means that only the people you want seeing your m&zwnj;e&zwnj;ss&zwnj;ages can see them.
           </p>
         </div>
       </div>
