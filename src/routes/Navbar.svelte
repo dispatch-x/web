@@ -85,8 +85,8 @@ a.d-button, a.d-button-secondary {
           </li>
         </ul>
         <form class="d-flex login-prompt" role="login">
-          <a href="/authenticate.html?state=reg" class="d-button" style="margin-right: 0.5rem; width: 75%;">Sign Up</a>
-          <a href="/authenticate.html" class="d-button-secondary" style="width: 25%;">Sign In</a>
+          <a href="/authenticate?state=reg" class="d-button" style="margin-right: 0.5rem; width: 75%;">Sign Up</a>
+          <a href="/authenticate" class="d-button-secondary" style="width: 25%;">Sign In</a>
         </form>
       </div>
     </div>

@@ -266,7 +266,7 @@ main {
           <p class="lead mb-4" style="color: var(--d-secondary-color); text-align: center;">
             Whatever your style, rainbow unicorns, squared edges or the default look, express yourself with peace of mind, knowing that we do not collect any of your data.
           </p>
-          <a href="/authenticate.html?state=reg" class="d-button" style="width: 100%; font-size: x-large;">Sign up now</a>
+          <a href="/authenticate?state=reg" class="d-button" style="width: 100%; font-size: x-large;">Sign up now</a>
           <a target="_blank" href="https://github.com/GoneRogueProductions/dispatchx" class="d-button icon-link" style="width: 100%; background: black; border: 0; justify-content: center; margin-top: .5rem;"><i class="fa-brands fa-github"></i> View on Github</a>
         </div>
         <div class="row">
