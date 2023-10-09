@@ -82,12 +82,16 @@
         
         
 
-        <script defer>
+        <script defer lang="ts">
+            import { onMount } from 'svelte';
+            const jq = window.$;
+
+        
             function hasProblems() {
-                if ($('#flexCheckDefault').is(':checked')) {
-                    $("#checkBoxErr").css("display", "none");
+                if (jq('#flexCheckDefault').is(':checked')) {
+                    jq("#checkBoxErr").css("display", "none");
                 } else {
-                    $("#checkBoxErr").css("display", "block");
+                    jq("#checkBoxErr").css("display", "block");
                 }
 
                 var isDisabled = false;
@@ -95,74 +99,83 @@
                     
                     for (const ele of document.querySelectorAll(".error")) {
                         if (ele.style.display !== "none") {
-                            $("#registerButton").prop("disabled", true);
+                            jq("#registerButton").prop("disabled", true);
                             isDisabled = true;
                             break;
                         }
                     }
                 }
-                else if ($('#flexCheckDefault').is(':checked') == false) {
+                else if (jq('#flexCheckDefault').is(':checked') == false) {
                     isDisabled = true;
                 }
 
                 if (isDisabled == false) {
-                    $("#registerButton").prop("disabled", false);
+                    jq("#registerButton").prop("disabled", false);
                 }
                 else if (isDisabled == true) {
-                    $("#registerButton").prop("disabled", true);
+                    jq("#registerButton").prop("disabled", true);
                 }
             }
 
-            const urlParams = new URLSearchParams(window.location.search);
-            const register = urlParams.get('state');
-            $(document).ready(function(){
-                $("#regForm").validate({
-                    rules: {
-                        password1: {
-                            equalTo: "#passInput"
-                        },
-                        password: {
-                            required: true
-                        }
-                    }
-                });
-                hasProblems();
-            });
-            $('#regForm input').on("keyup", function() {
-                hasProblems();
-            });
-            setInterval(hasProblems, 500);
+            
+            
+            
 
             function showLogin() {
-                $("#loginForm").show();
-                $("#regForm").hide();
+                jq("#loginForm").show();
+                jq("#regForm").hide();
             }
 
             function showRegister() {
-                $("#loginForm").hide();
-                $("#regForm").show();
+                jq("#loginForm").hide();
+                jq("#regForm").show();
             }
 
-            if (register == 'reg') showRegister();
+            
 
             // Do not refresh on submit, to use AJAX to send request
-            $(".login-form").submit(function(e) {
-                e.preventDefault();
-            });
+            
 
-            $("loginForm").submit(function(){
-                var username = $('#logInput').text();
-                var password = $('#passwInput').text();
-                $.ajax('/api/v1/login.php', {
-                    type: 'POST',  // http method
-                    data: { username: username, password: password },  // TODO: encrypt pass
-                    success: function (data, status, xhr) {
-                        // TODO: fill in
-                    },
-                    error: function (jqXhr, textStatus, errorMessage) {
-                        // TODO: fill in
-                    }
-			    });
+            const urlParams = new URLSearchParams(window.location.search);
+            const register = urlParams.get('state');
+
+            onMount(() => {
+                jq('#regForm input').on("keyup", function() {
+                    hasProblems();
+                });
+                setInterval(hasProblems, 500);
+                jq("loginForm").submit(function(){
+                    var username = jq('#logInput').text();
+                    var password = jq('#passwInput').text();
+                    jq.ajax('/api/v1/login.php', {
+                        type: 'POST',  // http method
+                        data: { username: username, password: password },  // TODO: encrypt pass
+                        success: function (data, status, xhr) {
+                            // TODO: fill in
+                        },
+                        error: function (jqXhr, textStatus, errorMessage) {
+                            // TODO: fill in
+                        }
+                    });
+                });
+                jq(function(){
+                    jq("#regForm").validate({
+                        rules: {
+                            password1: {
+                                equalTo: "#passInput"
+                            },
+                            password: {
+                                required: true
+                            }
+                        }
+                    });
+                    hasProblems();
+                });
+                if (register == 'reg') showRegister();
+                jq(".login-form").submit(function(e) {
+                    e.preventDefault();
+                });
+
             });
 
             // TODO: make one for register button
