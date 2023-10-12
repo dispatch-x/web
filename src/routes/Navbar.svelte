@@ -1,4 +1,5 @@
-<style>
+<style lang="scss">
+  @import 'main';
   .navbar {
   position: fixed;
   bottom: 0;
