@@ -266,7 +266,7 @@ footer.footer {
 
 <Navbar />
 
-<div class:demoHidden="{current === 1}" class="new-f">
+<div class:demoHidden="{current === 1}" class="new-f"  data-m="bounce-down">
   <button on:click="{hideF}" class="f-close"><i class="fa-solid fa-xmark"></i></button>
   <strong class="new-feature">
     New in Dispatch:
