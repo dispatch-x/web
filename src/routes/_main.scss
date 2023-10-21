@@ -135,3 +135,15 @@ video::-internal-media-controls-download-button {
 video::-webkit-media-controls-enclosure {
     overflow:hidden;
 }
+
+.badge {
+    background:rgb(57, 133, 247);
+    padding: .1rem;
+    border-radius: 50%;
+    aspect-ratio: 1 / 1;
+    color: white;
+    height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
