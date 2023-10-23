@@ -12,7 +12,14 @@
 
 	<div class="main" slot="content">
         <form class="message-send bg-body-tertiary">
-			<input type="text" autocomplete="off" placeholder="Type your message..." />
+			<input type="text" autocomplete="off" class="message-input" placeholder="Type your message..." />
+			<!-- Nest invisible submit button with styled one below -->
+			<div class="send-button">
+				<input type="submit" value="" />
+				<div>
+					<i class="fa-solid fa-paper-plane"></i>
+				</div>
+			</div>
 		</form>
     </div>
 </Skeleton>
@@ -30,12 +37,38 @@
 		font-size: 16pt;
 	}
 
-	// TODO: finish the CSS here
+
 	.message-send {
 		position: fixed;
 		bottom: 0;
 		left: 0;
 		width: 100%;
 		padding: 1rem;
+		display: flex;
+	}
+	.message-input {
+		padding: .25rem;
+		border-radius: .5rem;
+		border: 1px solid lightgray;
+	}
+	.send-button {
+		position: relative;
+		aspect-ratio: 1 / 1;
+		* {
+			border-radius: 50%;
+			aspect-ratio: 1 / 1;
+			border: 1px solid lightgray; // Temp
+		}
+		input {
+			background: transparent;
+
+		}
+		div {
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+			background: #5c2fff;
+		}
 	}
 </style>
