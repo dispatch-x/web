@@ -13,13 +13,7 @@
 	<div class="main" slot="content">
         <form class="message-send bg-body-tertiary">
 			<input type="text" autocomplete="off" class="message-input" placeholder="Type your message..." />
-			<!-- Nest invisible submit button with styled one below -->
-			<div class="send-button">
-				<input type="submit" value="" />
-				<div>
-					<i class="fa-solid fa-paper-plane"></i>
-				</div>
-			</div>
+			<button type="submit" class="send-button"><i class="fa-solid fa-paper-plane"></i></button>
 		</form>
     </div>
 </Skeleton>
@@ -53,22 +47,5 @@
 	}
 	.send-button {
 		position: relative;
-		aspect-ratio: 1 / 1;
-		* {
-			border-radius: 50%;
-			aspect-ratio: 1 / 1;
-			border: 1px solid lightgray; // Temp
-		}
-		input {
-			background: transparent;
-
-		}
-		div {
-			position: absolute;
-			top: 0;
-			left: 0;
-			z-index: -1;
-			background: #5c2fff;
-		}
 	}
 </style>
