@@ -53,12 +53,24 @@
 			e.preventDefault();
 			var username = jQuery('#logInput').text();
 			var password = jQuery('#passwInput').text();
-			fetchIt('GET', 'https://api.dispatch.eu.org/api/v2/user/${username}/auth', {
+			let response: object = fetchIt(
+				'GET',
+				'https://api.dispatch.eu.org/api/v2/user/${username}/auth',
+				{
+					password: password
+				}
+			);
+			localStorage.setItem('session', response.toString());
+		});
+
+		jQuery('#regForm').submit((e) => {
+			var username = jQuery('#nameInput').text();
+			var password = jQuery('#passInput').text();
+			fetchIt('GET', 'https://api.dispatch.eu.org/api/v2/users/new', {
+				user: username,
 				password: password
 			});
 		});
-
-		jQuery('#regForm').submit((e) => {});
 	});
 
 	// TODO: make one for register button

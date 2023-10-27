@@ -42,7 +42,7 @@ async function fetchIt(type: string, url: string, requestBody: object = {}, head
     }
     
     try {
-        return [await response.json(), await response.status];
+        return await response.json();
     }
     catch (e) {
         return 1;
