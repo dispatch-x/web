@@ -1,21 +1,33 @@
 <script>
 	import { page } from '$app/stores';
 	import Skeleton from '../Skeleton.svelte';
+	import { onMount } from 'svelte';
+	import jQuery from 'jquery';
 
 	var chatId = $page.url.searchParams.get('id');
+
+	onMount(() => {
+		jQuery('.send-button').height(jQuery('.message-input').height().toString());
+		jQuery('.send-button').width(jQuery('.send-button').height().toString());
+	});
 </script>
 
 <Skeleton>
 	<span slot="title">Lorenzo</span>
 
-	<button class="left-button" slot="left"><i class="fa-solid fa-angle-left"></i></button>
+	<button class="left-button" slot="left"><i class="fa-solid fa-angle-left" /></button>
 
 	<div class="main" slot="content">
-        <form class="message-send bg-body-tertiary">
-			<input type="text" autocomplete="off" class="message-input" placeholder="Type your message..." />
-			<button type="submit" class="send-button"><i class="fa-solid fa-paper-plane"></i></button>
+		<form class="message-send bg-body-tertiary">
+			<input
+				type="text"
+				autocomplete="off"
+				class="message-input"
+				placeholder="Type your message..."
+			/>
+			<button type="submit" class="send-button"><i class="fa-solid fa-paper-plane" /></button>
 		</form>
-    </div>
+	</div>
 </Skeleton>
 
 <style lang="scss">
@@ -31,7 +43,6 @@
 		font-size: 16pt;
 	}
 
-
 	.message-send {
 		position: fixed;
 		bottom: 0;
@@ -41,11 +52,15 @@
 		display: flex;
 	}
 	.message-input {
-		padding: .25rem;
-		border-radius: .5rem;
+		padding: 0.25rem;
+		border-radius: 0.5rem;
 		border: 1px solid lightgray;
 	}
 	.send-button {
 		position: relative;
+		border: 0;
+		border-radius: 50%;
+		background: $primary;
+		height: 100%;
 	}
 </style>
