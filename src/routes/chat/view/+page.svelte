@@ -6,16 +6,16 @@
 
 	var chatId = $page.url.searchParams.get('id');
 
-	onMount(() => {
+	/* onMount(() => {
 		jQuery('.send-button').height(jQuery('.message-input').height().toString());
 		jQuery('.send-button').width(jQuery('.send-button').height().toString());
-	});
+	}); */
 </script>
 
 <Skeleton>
 	<span slot="title">Lorenzo</span>
 
-	<button class="left-button" slot="left"><i class="fa-solid fa-angle-left" /></button>
+	<a href="/chat" class="left-button" slot="left"><i class="fa-solid fa-angle-left" /></a>
 
 	<div class="main" slot="content">
 		<form class="message-send bg-body-tertiary">
@@ -41,6 +41,9 @@
 		padding: 0 1rem;
 		height: 100%;
 		font-size: 16pt;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 	}
 
 	.message-send {
@@ -50,17 +53,34 @@
 		width: 100%;
 		padding: 1rem;
 		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		gap: 1rem;
+		@media (prefers-color-scheme: dark) {
+			& {
+				background: #333 !important;
+				color: white;
+			}
+		}
 	}
 	.message-input {
-		padding: 0.25rem;
+		padding: 0.5rem;
 		border-radius: 0.5rem;
 		border: 1px solid lightgray;
+		flex: 1;
 	}
 	.send-button {
 		position: relative;
 		border: 0;
-		border-radius: 50%;
+		border-radius: 20%;
 		background: $primary;
 		height: 100%;
+		color: white;
+		aspect-ratio: 1 / 1;
+		padding: 0.5rem 0.65rem;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		min-width: 0;
 	}
 </style>

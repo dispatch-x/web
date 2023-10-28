@@ -260,10 +260,22 @@
 		margin-bottom: 0.5rem;
 	}
 
+	// Fix dark mode
 	.input-group {
 		display: flex;
 		flex-direction: row;
 		box-shadow: $box-shadow-sm;
+		@media (prefers-color-scheme: dark) {
+			* {
+				background: #333 !important;
+			}
+			.input-group-text {
+				border-bottom: 0 !important;
+			}
+			.form-floating input {
+				border-radius: 0 6px 6px 0 !important;
+			}
+		}
 		.input-group-text {
 			width: auto;
 			border: 0;
@@ -343,6 +355,12 @@
 		flex-direction: column;
 		align-items: center;
 		justify-content: center;
+		@media (prefers-color-scheme: dark) {
+			& {
+				color-scheme: dark;
+				background: transparent !important;
+			}
+		}
 	}
 	.background {
 		display: none;
@@ -377,6 +395,11 @@
 			max-width: 500px;
 			max-height: 575px;
 			justify-content: flex-start;
+			@media (prefers-color-scheme: dark) {
+				& {
+					background: #111 !important;
+				}
+			}
 		}
 		h1 {
 			font-weight: 500;

@@ -302,6 +302,17 @@
 		text-align: center;
 		width: 100%;
 	}
+	@media (prefers-color-scheme: dark) {
+		.encryption {
+			color: white !important;
+		}
+		.text-muted {
+			color: $gray-600 !important;
+		}
+		:root {
+			--d-secondary-color: var(--d-gray-600);
+		}
+	}
 	.encryption-replay {
 		display: none;
 		user-select: none;

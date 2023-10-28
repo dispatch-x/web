@@ -109,5 +109,13 @@
 		* {
 			font-family: 'Outfit', $font-sans-serif !important;
 		}
+		@media (prefers-color-scheme: dark) {
+			& {
+				background: #333 !important;
+			}
+			.text-muted {
+				color: $gray-600 !important;
+			}
+		}
 	}
 </style>
