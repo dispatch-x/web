@@ -375,6 +375,7 @@
 				background: transparent !important;
 			}
 		}
+		margin-top: 2em;
 	}
 	.background {
 		display: none;
@@ -435,6 +436,7 @@
 			}
 			border: 2px solid #dee2e6;
 			border-radius: 1em 0 0 1em;
+			margin: 0;
 		}
 
 		.login-wrapper-wrapper {
