@@ -280,7 +280,7 @@
 				color: $gray-600 !important;
 				background: #333 !important;
 			}
-			.form-floating input:focus ~ .form-floating label {
+			.form-floating > .form-control:focus ~ label {
 				top: 10px !important;
 				padding-top: 0.25rem !important;
 			}
