@@ -260,12 +260,12 @@ def new_user():
   Creates a new user
   @url_params
   `user` - username
-  `oauth_key` - oauth_key of proposed user
+  `password` - password of proposed user
   """
   if request.method == 'GET':
     return json.dumps(
       user_pass.new_user(request.args.get('user'),
-                         request.args.get('oauth_key')))
+                         request.args.get('password')))
   else:
     return methoderror()
 
