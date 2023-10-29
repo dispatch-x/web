@@ -275,6 +275,15 @@
 			.form-floating input {
 				border-radius: 0 6px 6px 0 !important;
 			}
+			.form-floating label,
+			.form-floating label::after {
+				color: $gray-600 !important;
+				background: #333 !important;
+			}
+			.form-floating input:focus ~ .form-floating label {
+				top: 10px !important;
+				padding-top: 0.25rem !important;
+			}
 		}
 		.input-group-text {
 			width: auto;
