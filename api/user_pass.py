@@ -9,7 +9,8 @@ from replit import db
 
 def user_exists(username):
   connection = sqlite3.connect("dispatchx")
-  res = connection.execute(f"SELECT * FROM users WHERE username='{username}'")
+  res = connection.execute(f"SELECT * FROM users  WHERE username=?;",
+                           (username, ))
   return len(res.fetchall()) != 0
 
 
@@ -22,7 +23,7 @@ def contains_profanity(text):
 def new_user(username, password):
   connection = sqlite3.connect("dispatchx")
   connection.execute(
-    "CREATE TABLE IF NOT EXISTS users(passhash STRING,username STRING, joined INT, UNIQUE(username));"
+    "CREATE TABLE IF NOT EXISTS users(passhash STRING,username STRING, joined INT, status STRING, UNIQUE(username));"
   )
   if user_exists(username):
     return {
@@ -39,16 +40,16 @@ def new_user(username, password):
       # 422 unprocessable entity
     }
   connection.execute(
-    f"INSERT OR IGNORE INTO users (username, passhash, joined) VALUES (\"{username}\", \"{bcrypt.hashpw(password.encode(),bcrypt.gensalt()).decode()}\", {int(datetime.datetime.utcnow().timestamp())});"
+    f"INSERT OR IGNORE INTO users (username, passhash, joined, status) VALUES (\"{username}\", \"{bcrypt.hashpw(password.encode(),bcrypt.gensalt()).decode()}\", {int(datetime.datetime.utcnow().timestamp())}, 'Hello! I am using dispatchx');"
   )
   connection.commit()
   connection.close()
-  return {"message": f"success_new_user_{username}"}
+  return {"message": f"success_new_user_{username}", "code": 200}
 
 
 def delete_user(username):
   connection = sqlite3.connect("dispatchx")
-  connection.execute(f"DELETE FROM users WHERE username='{username}';")
+  connection.execute(f"DELETE FROM users  WHERE username=?;", (username, ))
   connection.commit()
   connection.close()
   return {"code": 204, "message": f"user_{username}_deleted"}
@@ -59,17 +60,30 @@ def list_users(username):
     return {"code": 403, "message": "you_are_not_an_admin"}
   else:
     connection = sqlite3.connect("dispatchx")
-    res = connection.execute(f"SELECT username, joined FROM users;")
+    res = connection.execute(f"SELECT username, joined, status FROM users;")
     users_info = []
     for user in res.fetchall():
-      users_info += {"name": user[0], "joined": user[1]}
+      users_info += {"name": user[0], "joined": user[1], "status": user[2]}
   return users_info
+
+
+def set_status(username, status):
+  if contains_profanity(username):
+    return {"message": "contains_profanity", "code": 422}
+  connection = sqlite3.connect("dispatchx")
+
+  connection.execute(
+    f"UPDATE users SET status = '{status}' WHERE username = '{username}';")
+  connection.commit()
+  connection.close()
+  return {"code": 200, "message": "success"}
 
 
 def user(username):
   connection = sqlite3.connect("dispatchx")
   res = connection.execute(
-    f"SELECT username, joined FROM users WHERE username='{username}';")
+    f"SELECT username, joined, status FROM users WHERE username=?;",
+    (username, ))
   user_info = res.fetchall()
   connection.close()
   if len(user_info) == 0:
@@ -80,7 +94,8 @@ def user(username):
       "message": "success",
       "username": user_info[0][0],
       "joined": user_info[0][1],
-      "admin": user_info[0][0] in admins.admins
+      "admin": user_info[0][0] in admins.admins,
+      "status": user_info[0][2]
     }
 
 
@@ -89,8 +104,8 @@ def matches(username, password):
   connection.execute(
     "CREATE TABLE IF NOT EXISTS users(passhash STRING,username STRING, joined INT, UNIQUE(username));"
   )
-  res = connection.execute(
-    f"SELECT passhash FROM users WHERE username=\"{username}\";")
+  res = connection.execute(f"SELECT passhash FROM users WHERE username=?;",
+                           (username, ))
   try:
     res2 = (res.fetchall()[0][0])
   except IndexError:

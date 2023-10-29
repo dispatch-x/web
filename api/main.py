@@ -80,6 +80,7 @@ def auth_url(user):
   `password` - the expected password 
   """
   if request.method == 'GET':
+    print(request)
     if user_pass.matches(user, request.args.get('password')) == True:
       oauth_key = secrets.token_urlsafe(32)
       db[f'{user}_oauth_key'] = oauth_key
@@ -217,6 +218,21 @@ def userinfo(user):
   `user` - user to search
   """
   return json.dumps(user_pass.user(user))
+
+
+@app.route('/api/v2/user/<user>/status')
+def status(user):
+  """
+  @desc
+  Sets a user's status
+  """
+  if request.method == 'GET':
+    if auth(user, request.args.get('oauth_key')):
+      return json.dumps(user_pass.set_status(user, request.args.get('status')))
+    else:
+      return autherror
+  else:
+    return methoderror()
 
 
 @app.route('/api/v2/users/all')
