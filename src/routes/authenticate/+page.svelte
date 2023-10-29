@@ -320,6 +320,11 @@
 		margin-top: $check-box-margin;
 		margin-bottom: -15px;
 		padding-left: 0;
+		@media (prefers-color-scheme: dark) {
+			.form-check-input {
+				background: #333;
+			}
+		}
 	}
 
 	input.error {
