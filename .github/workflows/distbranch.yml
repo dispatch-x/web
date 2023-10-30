@@ -51,7 +51,7 @@ jobs:
       run: |
         rm -rf dist
         mkdir dist
-        mkdir dist/img
+        mkdir dist/static
         cp -r static/icons dist
         cp -r static/backgrounds dist
         cp static/site.webmanifest dist/static/site.webmanifest
