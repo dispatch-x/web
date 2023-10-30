@@ -52,7 +52,7 @@ jobs:
         rm -rf dist
         mkdir dist
         mkdir dist/img
-        cp -r assets/img dist
+        [ ! -d "assets/img" ] && cp -r assets/img dist
         cp ./site.webmanifest dist/site.webmanifest
 
     - name: Use Node.js
