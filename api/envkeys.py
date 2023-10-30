@@ -34,7 +34,7 @@ def retrieve(uuid):
   return db[f"room_{uuid}_key"]
 
 
-# Example usage
+# Runs at the start of each server session to ensure working
 key = generate_key()
 key_string = key_to_string(key)
 print("Key as string:", key_string)
