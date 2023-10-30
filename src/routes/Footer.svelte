@@ -28,14 +28,18 @@
 		<div class="col mb-3">
 			<h5>Links</h5>
 			<ul class="nav flex-column">
-				<li class="nav-item mb-2"><a href="/" class="nav-link p-0 text-muted">Home</a></li>
+				<li class="nav-item mb-2">
+					<a href="/" class="nav-link p-0 text-muted">Home</a>
+				</li>
 				<li class="nav-item mb-2">
 					<a href="/authenticate" class="nav-link p-0 text-muted">Log in</a>
 				</li>
 				<li class="nav-item mb-2">
 					<a href="/authenticate?state=reg" class="nav-link p-0 text-muted">Sign up</a>
 				</li>
-				<li class="nav-item mb-2"><a href="/chat" class="nav-link p-0 text-muted">Chat</a></li>
+				<li class="nav-item mb-2">
+					<a href="/chat" class="nav-link p-0 text-muted">Chat</a>
+				</li>
 			</ul>
 		</div>
 
@@ -72,6 +76,8 @@
 				</li>
 			</ul>
 		</div>
+		<br>
+		
 
 		<!-- <div class="d-flex flex-column flex-sm-row justify-content-between py-4 my-4 border-top">
       <p>© 2022 Company, Inc. All rights reserved.</p>
@@ -83,7 +89,7 @@
     </div> -->
 	</div>
 </footer>
-
+<PolicyNavbar />
 <style lang="scss">
 	@import 'main';
 	footer.footer {
@@ -119,3 +125,6 @@
 		}
 	}
 </style>
+<script lang="ts">
+	import PolicyNavbar from "./policies/PolicyNavbar.svelte";
+</script>
