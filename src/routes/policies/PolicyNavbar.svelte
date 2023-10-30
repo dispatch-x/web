@@ -3,7 +3,7 @@
     import { onMount } from 'svelte';
     import { page } from '$app/stores';
     const navLinks = [
-      { text: 'Technical Policy', href: '/policies/technical' },
+      { text: 'Technica Policy', href: '/policies/technical' },
       { text: 'Privacy Policy', href: '/policies/privacy' },
       { text: 'Terms of Service', href: '/policies/terms' },
     ];
