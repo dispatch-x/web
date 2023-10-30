@@ -54,7 +54,7 @@ jobs:
         mkdir dist/img
         cp -r static/icons dist
         cp -r static/backgrounds dist
-        cp ./site.webmanifest dist/site.webmanifest
+        cp static/site.webmanifest dist/static/site.webmanifest
 
     - name: Use Node.js
       uses: actions/setup-node@main
