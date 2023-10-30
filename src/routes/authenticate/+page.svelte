@@ -275,6 +275,15 @@
 			.form-floating input {
 				border-radius: 0 6px 6px 0 !important;
 			}
+			.form-floating label,
+			.form-floating label::after {
+				color: $gray-600 !important;
+				background: #333 !important;
+			}
+			.form-floating > .form-control:focus ~ label {
+				top: 10px !important;
+				padding-top: 0.25rem !important;
+			}
 		}
 		.input-group-text {
 			width: auto;
@@ -320,6 +329,11 @@
 		margin-top: $check-box-margin;
 		margin-bottom: -15px;
 		padding-left: 0;
+		@media (prefers-color-scheme: dark) {
+			.form-check-input {
+				background: #333;
+			}
+		}
 	}
 
 	input.error {
@@ -361,6 +375,7 @@
 				background: transparent !important;
 			}
 		}
+		margin-top: 2em;
 	}
 	.background {
 		display: none;
@@ -421,6 +436,7 @@
 			}
 			border: 2px solid #dee2e6;
 			border-radius: 1em 0 0 1em;
+			margin: 0;
 		}
 
 		.login-wrapper-wrapper {

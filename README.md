@@ -1,9 +1,9 @@
 
 # dispatchx
 
-### THIS IS A NON-WORKING, SVELTEKIT VERSION OF DISPATCH.
+<!-- ### THIS IS A NON-WORKING, SVELTEKIT VERSION OF DISPATCH.
 
-You can visit it here: [Link](https://skit.dispatch.eu.org)
+You can visit it here: [Link](https://skit.dispatch.eu.org) -->
 
 <!--**LAUNCHING ON 1/11/23**
 -->
