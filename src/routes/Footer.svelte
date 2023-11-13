@@ -89,7 +89,6 @@
     </div> -->
 	</div>
 </footer>
-<PolicyNavbar />
 <style lang="scss">
 	@import 'main';
 	footer.footer {
