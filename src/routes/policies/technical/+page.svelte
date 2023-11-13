@@ -3,6 +3,7 @@
 </style>
 <script lang="ts">
     import Navbar from '../../Navbar.svelte';
+    import Footer from '../../Footer.svelte';
 </script>
 <Navbar />
 <div class="content">
@@ -15,3 +16,4 @@
     <h3 id="how-hashing-works">How hashing works</h3>
     <p>We use the Python module <code>bcrypt</code> to hash passwords. <code>bcrypt</code> is among the most secure password hashing solutions, as it uses salts, is intentionally slow (making attacks computationally expensive). Behind the scenes, it uses <code>Blowfish</code> for the hashing and <code>KDF</code> functions. For the work factor, we use 12, a balance between security and performance (and the industry standard).</p>
 </div>
+<Footer />

@@ -3,6 +3,7 @@
 </style>
 <script lang="ts">
     import Navbar from '../../Navbar.svelte';
+    import Footer from '../../Footer.svelte';
 </script>
 <Navbar />
 <div class="content">
@@ -15,3 +16,4 @@
     <h3 id="3-message-data">3 - Message Data</h3>
     <p>Messages are stored with a room uuid in the <code>messages</code> table. The data stored contains the message uuid, the room uuid, the sender (encrypted), the content (encrypted), and the UTC timestamp of when it was sent. Messages have a uuid, but the are not currently in use, rather there for future purposes such as message deletion.</p>
 </div>
+<Footer />

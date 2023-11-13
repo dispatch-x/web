@@ -3,6 +3,7 @@
 </style>
 <script lang="ts">
     import Navbar from '../../Navbar.svelte';
+    import Footer from '../../Footer.svelte';
 </script>
 <Navbar />
 <div class="content">
@@ -15,3 +16,4 @@
     <h3 id="3-general-rules">3 - General Rules</h3>
     <p>Please do not say anything on this site you would not say in person! Please remember that behind every monitor there is a human.</p>
 </div>
+<Footer />
