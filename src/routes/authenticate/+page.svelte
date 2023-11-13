@@ -73,7 +73,7 @@
 		});
 	});
 
-	// TODO: make one for register button
+
 </script>
 
 <img class="background" alt="Background of nature" src="/backgrounds/bg-1.jpg" />
@@ -205,7 +205,7 @@
 					class="form-check-label"
 					for="flexCheckDefault"
 				>
-					I agree to the <a href="#">terms and conditions</a>
+					I agree to the <a href="/policies/terms">terms and conditions</a>
 				</label>
 				<label
 					style="padding-left: 2px; display: none;"

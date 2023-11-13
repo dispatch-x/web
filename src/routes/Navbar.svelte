@@ -17,14 +17,14 @@
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav me-auto mb-2 mb-lg-0">
 				<li class="nav-item">
-					<a class="nav-link active" aria-current="page" href="#">Home</a>
+					<a class="nav-link active" aria-current="page" href="/">Home</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link active" href="#">Link</a>
+					<a class="nav-link active" href="/policies/privacy">Privacy</a>
 				</li>
-				<li class="nav-item">
-					<a class="nav-link disabled" aria-disabled="true">Disabled</a>
-				</li>
+				<!-- <li class="nav-item">
+					<a class="nav-link disabled" aria-disabled="true" href="?">Disabled</a>
+				</li> -->
 			</ul>
 			<form class="d-flex login-prompt" role="login">
 				<a href="/authenticate?state=reg" class="d-button" style="margin-right: 0.5rem; width: 75%;"
