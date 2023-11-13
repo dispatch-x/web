@@ -2,7 +2,7 @@
     @import '../policies';
 </style>
 <script lang="ts">
-    import PolicyNavbar from "../PolicyNavbar.svelte";
+    import Navbar from '../../Navbar.svelte';
 </script>
 <PolicyNavbar />
 <div class="content">
