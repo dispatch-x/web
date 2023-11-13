@@ -2,9 +2,9 @@
     @import '../policies';
 </style>
 <script lang="ts">
-    import PolicyNavbar from "../PolicyNavbar.svelte";
+    import Navbar from '../../Navbar.svelte';
 </script>
-<PolicyNavbar />
+<Navbar />
 <div class="content">
     <h2 id="dispatchx-privacy-policy">Dispatchx Privacy Policy</h2>
     <p>This piece of software is licensed under the Mozilla Public License 2.0, a version of which is kept in <code>LICENSE</code>.</p>
