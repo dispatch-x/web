@@ -4,7 +4,7 @@
 <script lang="ts">
     import Navbar from '../../Navbar.svelte';
 </script>
-<PolicyNavbar />
+<Navbar />
 <div class="content">
     <h2 id="dispatch-technical-policy">Dispatch Technical Policy</h2>
     <p>This document details how Dispatchx works under the hood, and how user data is protected.</p>

@@ -4,7 +4,7 @@
 <script lang="ts">
     import Navbar from '../../Navbar.svelte';
 </script>
-<PolicyNavbar />
+<Navbar />
 <div class="content">
     <h2 id="dispatchx-terms-of-service">Dispatchx Terms of Service</h2>
     <p>If you use Dispatchx, you agree to the terms of service stated below, and must follow them.</p>
