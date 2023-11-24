@@ -2,9 +2,10 @@
     @import '../policies';
 </style>
 <script lang="ts">
-    import PolicyNavbar from "../PolicyNavbar.svelte";
+    import Navbar from '../../Navbar.svelte';
+    import Footer from '../../Footer.svelte';
 </script>
-<PolicyNavbar />
+<Navbar />
 <div class="content">
     <h2 id="dispatch-technical-policy">Dispatch Technical Policy</h2>
     <p>This document details how Dispatchx works under the hood, and how user data is protected.</p>
@@ -15,3 +16,4 @@
     <h3 id="how-hashing-works">How hashing works</h3>
     <p>We use the Python module <code>bcrypt</code> to hash passwords. <code>bcrypt</code> is among the most secure password hashing solutions, as it uses salts, is intentionally slow (making attacks computationally expensive). Behind the scenes, it uses <code>Blowfish</code> for the hashing and <code>KDF</code> functions. For the work factor, we use 12, a balance between security and performance (and the industry standard).</p>
 </div>
+<Footer />

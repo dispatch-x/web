@@ -56,14 +56,14 @@
 				<li class="nav-item mb-2">
 					<a
 						target="_blank"
-						href="https://github.com/GoneRogueProductions/dispatchx"
+						href="https://github.com/GoneRogueProductions/dispatchx/issues"
 						class="nav-link p-0 text-muted">Issues</a
 					>
 				</li>
 				<li class="nav-item mb-2">
 					<a
 						target="_blank"
-						href="https://github.com/GoneRogueProductions/dispatchx"
+						href="https://github.com/GoneRogueProductions/dispatchx/pulls"
 						class="nav-link p-0 text-muted">Pull requests</a
 					>
 				</li>
@@ -72,6 +72,30 @@
 						target="_blank"
 						href="https://replit.com/@dispatchx/dispatchx-backend"
 						class="nav-link p-0 text-muted">API</a
+					>
+				</li>
+			</ul>
+		</div>
+		<div class="col mb-3">
+			<h5>Policies</h5>
+			<ul class="nav flex-column">
+				<li class="nav-item mb-2">
+					<a
+						href="/policies/privacy"
+						class="nav-link p-0 text-muted">Privacy</a
+					>
+				</li>
+				<li class="nav-item mb-2">
+					<a
+						href="/policies/technical"
+						class="nav-link p-0 text-muted">Technical</a
+					>
+				</li>
+				<li class="nav-item mb-2">
+					<a
+
+						href="/policies/terms"
+						class="nav-link p-0 text-muted">Terms</a
 					>
 				</li>
 			</ul>
@@ -89,7 +113,6 @@
     </div> -->
 	</div>
 </footer>
-<PolicyNavbar />
 <style lang="scss">
 	@import 'main';
 	footer.footer {

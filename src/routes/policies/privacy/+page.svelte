@@ -2,9 +2,10 @@
     @import '../policies';
 </style>
 <script lang="ts">
-    import PolicyNavbar from "../PolicyNavbar.svelte";
+    import Navbar from '../../Navbar.svelte';
+    import Footer from '../../Footer.svelte';
 </script>
-<PolicyNavbar />
+<Navbar />
 <div class="content">
     <h2 id="dispatchx-privacy-policy">Dispatchx Privacy Policy</h2>
     <p>This piece of software is licensed under the Mozilla Public License 2.0, a version of which is kept in <code>LICENSE</code>.</p>
@@ -15,3 +16,4 @@
     <h3 id="3-message-data">3 - Message Data</h3>
     <p>Messages are stored with a room uuid in the <code>messages</code> table. The data stored contains the message uuid, the room uuid, the sender (encrypted), the content (encrypted), and the UTC timestamp of when it was sent. Messages have a uuid, but the are not currently in use, rather there for future purposes such as message deletion.</p>
 </div>
+<Footer />
